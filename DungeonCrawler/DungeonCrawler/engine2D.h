@@ -16,7 +16,6 @@ class ENGINE_2D {
 private:
 	HANDLE console_handle;
 	CHAR_INFO buffer[GAME_HEIGHT][GAME_WIDTH];
-	WORD pixel_value[PIXEL_HEIGHT][PIXEL_WIDTH];
 	COORD bufferSize;
 	COORD bufferCoord;
 	SMALL_RECT gameSpace;
@@ -25,9 +24,8 @@ private:
 	int font_size_x;
 	int font_size_y;
 
-	void pixelToBuffer();
 public:
-	ASSET_2D* assets[NB_LAYER];
+	ASSET_2D** assets[NB_LAYER];
 	void start();
 	void update();
 

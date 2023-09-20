@@ -62,6 +62,9 @@ void ENGINE_2D::update()
         }
     }
 
+    assets[0][0]->Draw((CHAR_INFO**)buffer);
+
+
     WriteConsoleOutput(console_handle, (CHAR_INFO*)buffer, bufferSize, bufferCoord, &gameSpace);
     Sleep(500);
 }

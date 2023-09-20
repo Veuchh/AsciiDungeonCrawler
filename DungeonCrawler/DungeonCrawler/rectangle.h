@@ -4,8 +4,8 @@
 #pragma once
 
 
-class RECTANGLE:ASSET_2D {
+class RECTANGLE:public ASSET_2D {
 public:
 	WORD color;
-	void Draw(WORD** px);
+	void Draw(CHAR_INFO** px);
 };

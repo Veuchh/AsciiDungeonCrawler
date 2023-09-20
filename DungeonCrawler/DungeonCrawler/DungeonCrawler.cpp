@@ -3,11 +3,21 @@
 #include <windows.h>
 #include <string.h>
 #include "engine2D.h"
+#include "rectangle.h"
 
 int main()
 {
     ENGINE_2D engine = ENGINE_2D();
     engine.start();
+    engine.assets[0] = new ASSET_2D*[1];
+    RECTANGLE* test_rect = new RECTANGLE();
+    test_rect->color = 0x0F;
+    test_rect->pos_x = 10;
+    test_rect->pos_y = 10;
+    test_rect->width = 10;
+    test_rect->height = 10;
+    engine.assets[0][0] =(ASSET_2D*) test_rect;
+
     while (true) {
         engine.update();
 
