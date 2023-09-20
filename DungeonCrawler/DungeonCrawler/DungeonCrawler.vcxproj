@@ -139,7 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="asset2D.cpp" />
+    <ClCompile Include="consolebuffer.cpp" />
     <ClCompile Include="DungeonCrawler.cpp" />
+    <ClCompile Include="engine2D.cpp" />
+    <ClCompile Include="rectangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="asset2D.h" />
+    <ClInclude Include="consolebuffer.h" />
+    <ClInclude Include="engine2D.h" />
+    <ClInclude Include="rectangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
