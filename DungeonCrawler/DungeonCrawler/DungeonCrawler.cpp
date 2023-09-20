@@ -1,20 +1,35 @@
-// DungeonCrawler.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+#include <windows.h>
+#include <string.h>
+#include <stdio.h>
 #include <iostream>
 
-int main()
+using namespace std;
+
+#define SCREEN_WIDTH 500
+#define SCREEN_HEIGHT 500
+
+void main(void)
 {
-    std::cout << "Hello World!\n";
+
+	COORD dwBufferSize = { SCREEN_WIDTH,SCREEN_HEIGHT };
+	COORD dwBufferCoord = { 0, 0 };
+	SMALL_RECT rcRegion = { 0, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1 };
+
+	CHAR_INFO buffer[SCREEN_HEIGHT][SCREEN_WIDTH];
+
+	HANDLE hOutput = (HANDLE)GetStdHandle(STD_OUTPUT_HANDLE);
+
+	ReadConsoleOutput(hOutput, (CHAR_INFO*)buffer, dwBufferSize,
+		dwBufferCoord, &rcRegion);
+
+	for (size_t y = 0; y < 100; y++)
+	{
+		buffer[0][y].Char.UnicodeChar = 0x2580;
+		buffer[0][y].Attributes = 0x0001 | 0x0002 | 0x0008;
+	}
+
+	WriteConsoleOutputW(hOutput, (CHAR_INFO*)buffer, dwBufferSize,
+		dwBufferCoord, &rcRegion);
+
+	getchar();
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
