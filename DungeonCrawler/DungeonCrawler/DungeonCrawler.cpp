@@ -30,6 +30,8 @@ int main()
     SetCurrentConsoleFontEx(hOutput, FALSE, &cfi);
     setConsoleWindowStyle(GWL_STYLE, new_style);
     SendMessage(GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
+    SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE), CONSOLE_FULLSCREEN_MODE, 0);
+
 
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
