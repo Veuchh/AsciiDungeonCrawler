@@ -9,12 +9,11 @@
 #define FONT_SIZE_X 3
 #define FONT_SIZE_Y 6
 
-LONG_PTR setConsoleWindowStyle(INT, LONG_PTR);
-
 int main()
 {
     int SCREEN_WIDTH = 0, SCREEN_HEIGHT = 0;
     LONG_PTR new_style = WS_OVERLAPPEDWINDOW | WS_HSCROLL | WS_VSCROLL;
+    LONG_PTR setConsoleWindowStyle(INT, LONG_PTR);
 
     HANDLE hOutput = (HANDLE)GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -30,7 +29,6 @@ int main()
     SetCurrentConsoleFontEx(hOutput, FALSE, &cfi);
     setConsoleWindowStyle(GWL_STYLE, new_style);
     SendMessage(GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
-
 
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
