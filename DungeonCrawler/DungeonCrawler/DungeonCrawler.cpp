@@ -4,10 +4,10 @@
 #include <string.h>
 
 
-#define GAME_WIDTH 500
-#define GAME_HEIGHT 150
-#define FONT_SIZE_X 2
-#define FONT_SIZE_Y 4
+#define GAME_WIDTH 350
+#define GAME_HEIGHT 120
+#define FONT_SIZE_X 3
+#define FONT_SIZE_Y 6
 
 LONG_PTR setConsoleWindowStyle(INT, LONG_PTR);
 
