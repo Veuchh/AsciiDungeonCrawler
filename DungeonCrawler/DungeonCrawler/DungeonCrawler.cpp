@@ -4,6 +4,7 @@
 #include <string.h>
 
 
+
 #define GAME_WIDTH 350
 #define GAME_HEIGHT 120
 #define FONT_SIZE_X 3
@@ -65,10 +66,19 @@ int main()
 
     WriteConsoleOutput(hOutput, (CHAR_INFO*)buffer, dwBufferSize, dwBufferCoord, &rcRegion);
     while (true) {
-        if (getc(stdin) == ' ')
+        /*if (getc(stdin) == ' ')
         {
             return 0;
+        }*/
+        for (int i = 0; i < GAME_WIDTH; ++i)
+        {
+            for (int j = 0; j < GAME_HEIGHT; ++j)
+            {
+                buffer[j][i].Attributes = buffer[j][i].Attributes +1 % 0xFF;
+            }
         }
+        WriteConsoleOutput(hOutput, (CHAR_INFO*)buffer, dwBufferSize, dwBufferCoord, &rcRegion);
+        Sleep(100);
 
     }
 
