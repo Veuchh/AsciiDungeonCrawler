@@ -5,7 +5,7 @@
 class CONSOLE_BUFFER
 {
 public:
-	CHAR_INFO buffer;
-private:
+	CHAR_INFO** buffer;
+	int size_x;
 
 };

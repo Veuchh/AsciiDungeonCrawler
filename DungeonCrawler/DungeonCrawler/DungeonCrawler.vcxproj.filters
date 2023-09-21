@@ -18,5 +18,43 @@
     <ClCompile Include="DungeonCrawler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="asset2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="consolebuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rectangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="asset2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="consolebuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rectangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
