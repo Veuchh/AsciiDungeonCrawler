@@ -2,6 +2,7 @@
 
 void RECTANGLE::Draw()
 {
+	NODE_2D::Draw();
 	for (int i = pos_x; i < pos_x+height; ++i)
 	{
 		for (int j = pos_y; j < pos_y+width; ++j)
