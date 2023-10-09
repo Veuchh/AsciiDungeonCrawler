@@ -34,17 +34,15 @@ void RENDERER_2D::start()
     SCREEN_WIDTH = csbi->srWindow.Right - csbi->srWindow.Left + 1;
     SCREEN_HEIGHT = csbi->srWindow.Bottom - csbi->srWindow.Top + 1;
 
-    short OFFSET_X = (SCREEN_WIDTH - GAME_WIDTH) >> 1;
-    short OFFSET_Y = (SCREEN_HEIGHT - GAME_HEIGHT) >> 1;
-    OFFSET_Y = 0;
-
+    offset_x = (SCREEN_WIDTH - GAME_WIDTH) >> 1;
+    offset_y = (SCREEN_HEIGHT - GAME_HEIGHT) >> 1;
 
     bufferSize = { GAME_WIDTH,GAME_HEIGHT };
     bufferCoord = { 0, 0 };
-    gameSpace.Left = OFFSET_X;
-    gameSpace.Top = OFFSET_Y;
-    gameSpace.Right = GAME_WIDTH - 1 + OFFSET_X;
-    gameSpace.Bottom = GAME_HEIGHT - 1 + OFFSET_Y;
+    gameSpace.Left = offset_x;
+    gameSpace.Top = offset_y;
+    gameSpace.Right = GAME_WIDTH - 1 + offset_x;
+    gameSpace.Bottom = GAME_HEIGHT - 1 + offset_y;
 
     free(csbi);
 
