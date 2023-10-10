@@ -33,12 +33,11 @@ SPRITE_DATA* SPRITE_PARSER::ParseSprite(string spriteName)
 	ifs.read((char*)&rows, sizeof(int));
 
 	int image_size = 0;
-	columns += (3 * columns) % 4;
 	image_size = 3 * columns * rows;
 
 	ifs.seekg(beg);
 
-	unsigned char R, G, B;
+	unsigned char R, G, B, A;
 
 	WORD** pixels = new WORD * [columns];
 
@@ -54,30 +53,35 @@ SPRITE_DATA* SPRITE_PARSER::ParseSprite(string spriteName)
 		ifs.read((char*)&B, sizeof(unsigned char));
 		ifs.read((char*)&G, sizeof(unsigned char));
 		ifs.read((char*)&R, sizeof(unsigned char));
-		ifs.get();
+		ifs.read((char*)&A, sizeof(unsigned char));
 
 		WORD word = 0;
 
+		if (A == 0)
+		{
+			word = -1;
+		}
+		else
+		{
+			if (R != 0)
+				word = word | 0X0004;
 
-		if (R != 0)
-			word = word | 0X0004;
+			if (G != 0)
+				word = word | 0X0002;
 
-		if (G != 0)
-			word = word | 0X0002;
+			if (B != 0)
+				word = word | 0X0001;
 
-		if (B != 0)
-			word = word | 0X0001;
-
-		if (R == 255 || G == 255 || B == 255)
-			word = word | 0X0008;
-
+			if (R == 255 || G == 255 || B == 255)
+				word = word | 0X0008;
+		}
 
 		//ofs << std::dec << " R: " << int(R) << " G: " << int(G) << " B: " << int(B) << "  position in file: " << ifs.tellg() << " ROW :" << (i % rows) << " COLUMN : " << (int)i / rows << "\r\n";
 
-		pixels[i % rows][(int)i / rows] = word;
+		pixels[i % rows][columns - ((int)i / rows)  - 1] = word;
 	}
 
-	SPRITE_DATA* spriteData = new SPRITE_DATA(pixels,columns, rows);
+	SPRITE_DATA* spriteData = new SPRITE_DATA(pixels, columns, rows);
 
 	return spriteData;
 }
