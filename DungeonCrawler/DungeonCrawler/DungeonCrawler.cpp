@@ -10,6 +10,7 @@
 #include "spriteData.h"
 #include "spriteParser.h"
 #include "text2D.h"
+#include "sprite2D.h"
 
 int main()
 {
@@ -49,6 +50,23 @@ int main()
     text->width = 40;
     text->pos_x = 10;
     text->pos_y = 10;
+    SPRITE_2D* sprite = new SPRITE_2D(renderer);
+    sprite->pos_x = 60;
+    sprite->pos_y = 60;
+    sprite->spriteData = SPRITE_PARSER::ParseSprite("../testSprite.bmp");
+    sprite->height = sprite->spriteData->m_columns;
+    sprite->width = sprite->spriteData->m_rows;
+    engine.scene->addChildNode(sprite);
+    SPRITE_2D* sprite2 = new SPRITE_2D(renderer);
+    sprite2->pos_x = 20;
+    sprite2->pos_y = 100;
+    sprite2->spriteData = SPRITE_PARSER::ParseSprite("../testSprite2.bmp");
+    sprite2->height = sprite2->spriteData->m_columns;
+    sprite2->width = sprite2->spriteData->m_rows;
+    engine.scene->addChildNode(sprite2);
+
+
+
 
     engine.start();
 

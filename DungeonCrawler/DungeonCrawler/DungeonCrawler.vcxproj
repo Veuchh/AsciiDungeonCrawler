@@ -147,6 +147,7 @@
     <ClCompile Include="renderer2D.cpp" />
     <ClCompile Include="rectangle.cpp" />
     <ClCompile Include="scene.cpp" />
+    <ClCompile Include="sprite2D.cpp" />
     <ClCompile Include="spriteData.cpp" />
     <ClCompile Include="spriteParser.cpp" />
     <ClCompile Include="text2D.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="renderer2D.h" />
     <ClInclude Include="rectangle.h" />
     <ClInclude Include="scene.h" />
+    <ClInclude Include="sprite2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
