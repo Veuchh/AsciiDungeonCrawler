@@ -10,22 +10,27 @@ void TEXT_2D::Draw()
 	int current = 0;
 	for (int i = 0; i < height / 2;i++)
 	{
-		WriteLine(line+1, pos_y, width, content, current);
-		current += width;
+		current += WriteLine(line+i, pos_y, width, content, current);
+		//current += width;
 		if (current > content.length())
 		{
-			current = content.length();
+			return;
 		}
 	}
 }
 
-void TEXT_2D::WriteLine(short pos_x,short start_y, short maxLenght, std::string content, int lineStart)
+int TEXT_2D::WriteLine(short pos_x,short start_y, short maxLenght, std::string content, int lineStart)
 {
-	if (pos_x < GAME_HEIGHT && start_y+maxLenght<GAME_WIDTH)
+	if (pos_x < GAME_HEIGHT && start_y<GAME_WIDTH)
 	{
-		for (int i = 0; i < maxLenght && lineStart+i <= content.length(); ++i)
+		int i = 0;
+		for (i = 0; i < maxLenght && lineStart+i <= content.length()-1; ++i)
 		{
+			if (content[lineStart+i] == '\n')
+				return ++i;
 			renderer->writeChar(pos_x, start_y + i, content[lineStart+i], color);
 		}
+		return i;
 	}
+	return maxLenght;
 }

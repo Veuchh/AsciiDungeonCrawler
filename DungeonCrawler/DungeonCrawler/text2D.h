@@ -9,5 +9,5 @@ public:
 	std::string content;
 	TEXT_2D(RENDERER_2D* renderer);
 private:
-	void WriteLine(short pos_x, short start_y, short maxLenght,std::string content, int lineStart);
+	int WriteLine(short pos_x, short start_y, short maxLenght,std::string content, int lineStart);
 };
