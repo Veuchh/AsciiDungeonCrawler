@@ -49,16 +49,7 @@ void RENDERER_2D::start()
 
     //ReadConsoleOutput(console_handle, (CHAR_INFO*)buffer, bufferSize, bufferCoord, &gameSpace);
 
-
-    for (int i = 0; i < GAME_HEIGHT; i++)
-    {
-        for (int j = 0; j < GAME_WIDTH; j++)
-        {
-            buffer[i][j].Char.UnicodeChar = 0x2584;
-            buffer[i][j].Attributes = 0xFF;
-        }
-    }
-
+    fill(0x00);
 
 }
 
@@ -103,6 +94,20 @@ void RENDERER_2D::writePixel(int coord_x, int coord_y, WORD color)
 }
 
 void RENDERER_2D::writeChar(int coord_x, int coord_y, CHAR value, WORD color) {
-    buffer[coord_x][coord_y].Char.UnicodeChar = value;
-    buffer[coord_x][coord_y].Attributes = color;
+    if (coord_x < GAME_HEIGHT && coord_y < GAME_WIDTH) {
+        buffer[coord_x][coord_y].Char.UnicodeChar = value;
+        buffer[coord_x][coord_y].Attributes = color;
+    }
+}
+
+void RENDERER_2D::fill(WORD color)
+{
+    for (int i = 0; i < GAME_HEIGHT; i++)
+    {
+        for (int j = 0; j < GAME_WIDTH; j++)
+        {
+            buffer[i][j].Char.UnicodeChar = PIXEL_CHAR;
+            buffer[i][j].Attributes = color;
+        }
+    }
 }

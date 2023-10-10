@@ -12,6 +12,6 @@ void RECTANGLE::Draw()
 	}
 }
 
-RECTANGLE::RECTANGLE(RENDERER_2D* renderer) : ASSET_2D(renderer)
-{
-}
+
+
+RECTANGLE::RECTANGLE(RENDERER_2D* renderer) : ASSET_2D(renderer){}

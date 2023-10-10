@@ -39,6 +39,9 @@
     <ClCompile Include="node2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="text2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="asset2D.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="node2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

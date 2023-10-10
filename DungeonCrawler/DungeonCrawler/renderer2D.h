@@ -8,6 +8,7 @@
 #define FONT_SIZE_X 6
 #define FONT_SIZE_Y 12
 #define NB_LAYER 5
+#define PIXEL_CHAR 0x2584
 
 
 
@@ -37,5 +38,6 @@ public:
 	LONG_PTR setConsoleWindowStyle(INT n_index, LONG_PTR new_style);
 	void writePixel(int coord_x, int coord_y, WORD color);
 	void writeChar(int coord_x, int coord_y, CHAR value, WORD color);
+	void fill(WORD color);
 
 };
