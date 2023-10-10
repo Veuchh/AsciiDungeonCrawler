@@ -1,11 +1,14 @@
 #define _WIN32_WINNT 0x0501
 #include <stdio.h>
+#include <iostream>
 #include <windows.h>
 #include <string.h>
 #include "renderer2D.h"
 #include "engine2D.h"
 #include "scene.h"
 #include "rectangle.h"
+#include "spriteData.h"
+#include "spriteParser.h"
 #include "text2D.h"
 
 int main()
@@ -45,9 +48,6 @@ int main()
     text->pos_y = 10;
 
     engine.start();
-
-
-
 
     return 0;
 }
