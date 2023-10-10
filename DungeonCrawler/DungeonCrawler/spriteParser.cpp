@@ -1,0 +1,83 @@
+#include <Windows.h>
+#include <fstream>
+#include "SpriteParser.h"
+
+using namespace std;
+
+SPRITE_DATA* SPRITE_PARSER::ParseSprite(string spriteName)
+{
+	ifstream ifs;
+
+	ifs.open(spriteName, ios::binary);
+
+	if (!ifs)
+	{
+		system("pause");
+	}
+
+	ifs.seekg(2);
+
+	int file_size;
+	ifs.read((char*)&file_size, sizeof(int));
+
+	ifs.seekg(10);
+	int beg;
+	ifs.read((char*)&beg, sizeof(int));
+
+	ifs.seekg(18);
+	int columns;
+	ifs.read((char*)&columns, sizeof(int));
+
+	ifs.seekg(22);
+	int rows;
+	ifs.read((char*)&rows, sizeof(int));
+
+	int image_size = 0;
+	columns += (3 * columns) % 4;
+	image_size = 3 * columns * rows;
+
+	ifs.seekg(beg);
+
+	unsigned char R, G, B;
+
+	WORD** pixels = new WORD * [columns];
+
+	for (size_t i = 0; i < columns; i++)
+	{
+		pixels[i] = new WORD[rows];
+
+		//cout << "Column " << i << " adding an array of size " << rows << "\n";
+	}
+
+	for (int i = 0; i < image_size / 3; i++)
+	{
+		ifs.read((char*)&B, sizeof(unsigned char));
+		ifs.read((char*)&G, sizeof(unsigned char));
+		ifs.read((char*)&R, sizeof(unsigned char));
+		ifs.get();
+
+		WORD word = 0;
+
+
+		if (R != 0)
+			word = word | 0X0004;
+
+		if (G != 0)
+			word = word | 0X0002;
+
+		if (B != 0)
+			word = word | 0X0001;
+
+		if (R == 255 || G == 255 || B == 255)
+			word = word | 0X0008;
+
+
+		//ofs << std::dec << " R: " << int(R) << " G: " << int(G) << " B: " << int(B) << "  position in file: " << ifs.tellg() << " ROW :" << (i % rows) << " COLUMN : " << (int)i / rows << "\r\n";
+
+		pixels[i % rows][(int)i / rows] = word;
+	}
+
+	SPRITE_DATA* spriteData = new SPRITE_DATA(pixels,columns, rows);
+
+	return spriteData;
+}
