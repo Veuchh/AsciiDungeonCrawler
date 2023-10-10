@@ -1,14 +1,13 @@
 #pragma once
-#include "asset2D.h"
+#include "node2D.h"
 #include "renderer2D.h"
 
 
-class SCENE {
+class SCENE : public NODE_2D {
 public:
 	SCENE(RENDERER_2D* renderer);
 	RENDERER_2D* renderer;
-	ASSET_2D** assets;
 	void display();
-	void addAsset(int layer, int pose_x, int pos_y, ASSET_2D asset);
+	void addNode(int layer, int pose_x, int pos_y, NODE_2D asset);
 
 };

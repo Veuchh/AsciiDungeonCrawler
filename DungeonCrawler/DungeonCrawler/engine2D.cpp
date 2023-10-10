@@ -11,8 +11,7 @@ void ENGINE_2D::start()
 	renderer->start();
 	while (true)
 	{
-		//scene->display();
-		scene->assets[0]->Draw();
+		scene->Draw();
 		renderer->update();
 		Sleep(500);
 	}

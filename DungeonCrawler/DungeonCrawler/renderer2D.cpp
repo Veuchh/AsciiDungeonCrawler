@@ -3,20 +3,21 @@
 
 void RENDERER_2D::start()
 {
-    int SCREEN_WIDTH = 0, SCREEN_HEIGHT = 0;
+    short SCREEN_WIDTH = 0, SCREEN_HEIGHT = 0;
     LONG_PTR new_style = WS_OVERLAPPEDWINDOW | WS_HSCROLL | WS_VSCROLL;
     LONG_PTR setConsoleWindowStyle(INT, LONG_PTR);
 
     console_handle = (HANDLE)GetStdHandle(STD_OUTPUT_HANDLE);
 
-    CONSOLE_FONT_INFOEX cfi;
-    cfi.cbSize = sizeof(cfi);
-    cfi.nFont = 0;
-    cfi.dwFontSize.X = FONT_SIZE_X;                   // Width of each character in the font
-    cfi.dwFontSize.Y = FONT_SIZE_Y;                  // Height
-    cfi.FontFamily = FF_DONTCARE;
-    cfi.FontWeight = FW_NORMAL;
-    SetCurrentConsoleFontEx(console_handle, FALSE, &cfi);
+    CONSOLE_FONT_INFOEX *cfi = new CONSOLE_FONT_INFOEX();
+    cfi->cbSize = sizeof(cfi);
+    cfi->nFont = 0;
+    cfi->dwFontSize.X = FONT_SIZE_X;                   // Width of each character in the font
+    cfi->dwFontSize.Y = FONT_SIZE_Y;                  // Height
+    cfi->FontFamily = FF_DONTCARE;
+    cfi->FontWeight = FW_NORMAL;
+    SetCurrentConsoleFontEx(console_handle, FALSE, cfi);
+    free(cfi);
 
     CONSOLE_CURSOR_INFO cci;
     cci.bVisible = FALSE;
@@ -28,18 +29,22 @@ void RENDERER_2D::start()
     SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE), CONSOLE_FULLSCREEN_MODE, 0);
 
 
-    CONSOLE_SCREEN_BUFFER_INFO csbi;
-    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-    SCREEN_WIDTH = csbi.srWindow.Right - csbi.srWindow.Left + 1;
-    SCREEN_HEIGHT = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
+    CONSOLE_SCREEN_BUFFER_INFO* csbi = new CONSOLE_SCREEN_BUFFER_INFO();
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), csbi);
+    SCREEN_WIDTH = csbi->srWindow.Right - csbi->srWindow.Left + 1;
+    SCREEN_HEIGHT = csbi->srWindow.Bottom - csbi->srWindow.Top + 1;
 
-    short OFFSET_X = SCREEN_WIDTH / 2 - GAME_WIDTH / 2;
-    short OFFSET_Y = SCREEN_HEIGHT / 2 - GAME_HEIGHT / 2;
-
+    offset_x = (SCREEN_WIDTH - GAME_WIDTH) >> 1;
+    offset_y = (SCREEN_HEIGHT - GAME_HEIGHT) >> 1;
 
     bufferSize = { GAME_WIDTH,GAME_HEIGHT };
     bufferCoord = { 0, 0 };
-    gameSpace = { OFFSET_X, OFFSET_Y, GAME_WIDTH - 1 + OFFSET_X, GAME_HEIGHT - 1 + OFFSET_Y };
+    gameSpace.Left = offset_x;
+    gameSpace.Top = offset_y;
+    gameSpace.Right = GAME_WIDTH - 1 + offset_x;
+    gameSpace.Bottom = GAME_HEIGHT - 1 + offset_y;
+
+    free(csbi);
 
 
     //ReadConsoleOutput(console_handle, (CHAR_INFO*)buffer, bufferSize, bufferCoord, &gameSpace);
@@ -83,7 +88,7 @@ LONG_PTR RENDERER_2D::setConsoleWindowStyle(INT n_index, LONG_PTR new_style)
 
 void RENDERER_2D::writePixel(int coord_x, int coord_y, WORD color)
 {
-    if (coord_x < 0 && coord_x > GAME_HEIGHT || coord_y < 0 && coord_y > GAME_HEIGHT)
+    if ((coord_x < 0 || coord_x >= PIXEL_HEIGHT) || (coord_y < 0 || coord_y >= PIXEL_WIDTH))
     {
         return;
     }
@@ -95,4 +100,9 @@ void RENDERER_2D::writePixel(int coord_x, int coord_y, WORD color)
     {
         buffer[coord_x/2][coord_y].Attributes = (buffer[coord_x/2][coord_y].Attributes & 0xF0) | color;
     }
+}
+
+void RENDERER_2D::writeChar(int coord_x, int coord_y, CHAR value, WORD color) {
+    buffer[coord_x][coord_y].Char.UnicodeChar = value;
+    buffer[coord_x][coord_y].Attributes = color;
 }
