@@ -7,8 +7,10 @@ using namespace std;
 SPRITE_DATA* SPRITE_PARSER::ParseSprite(string spriteName)
 {
 	ifstream ifs;
+	ofstream ofs;
 
 	ifs.open(spriteName, ios::binary);
+	ofs.open("Test.txt");
 
 	if (!ifs)
 	{
@@ -76,9 +78,9 @@ SPRITE_DATA* SPRITE_PARSER::ParseSprite(string spriteName)
 				word = word | 0X0008;
 		}
 
-		//ofs << std::dec << " R: " << int(R) << " G: " << int(G) << " B: " << int(B) << "  position in file: " << ifs.tellg() << " ROW :" << (i % rows) << " COLUMN : " << (int)i / rows << "\r\n";
+		ofs << std::dec << " R: " << int(R) << " G: " << int(G) << " B: " << int(B) << "  position in file: " << ifs.tellg() << " ROW :" << (i % rows) << " COLUMN : " << columns - ((int)i / rows) - 1 << "\r\n";
 
-		pixels[i % rows][columns - ((int)i / rows)  - 1] = word;
+		pixels[columns - ((int)i / rows) - 1][i % rows] = word;
 	}
 
 	SPRITE_DATA* spriteData = new SPRITE_DATA(pixels, columns, rows);
