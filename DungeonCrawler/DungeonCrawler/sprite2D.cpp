@@ -8,7 +8,7 @@ void SPRITE_2D::Draw()
     {
         for (size_t row = 0; row < spriteData->m_rows; row++)
         {
-            if (spriteData->m_pixels[row][col] >= 0)
+            if (spriteData->m_pixels[row][col] < 0x1000)
             {
                 renderer->writePixel(pos_x + col, pos_y + row, spriteData->m_pixels[row][col]);
             }

@@ -59,7 +59,7 @@ SPRITE_DATA* SPRITE_PARSER::ParseSprite(string spriteName)
 
 		if (A == 0)
 		{
-			word = -1;
+			word = 0x1000;
 		}
 		else
 		{
