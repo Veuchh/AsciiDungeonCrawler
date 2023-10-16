@@ -53,17 +53,24 @@ int main()
     SPRITE_2D* sprite = new SPRITE_2D(renderer);
     sprite->pos_x = 0;
     sprite->pos_y = 0;
-    sprite->spriteData = SPRITE_PARSER::ParseSprite("../testSprite.bmp");
+    sprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_idle.bmp");
     sprite->height = sprite->spriteData->m_columns;
     sprite->width = sprite->spriteData->m_rows;
     engine.scene->addChildNode(sprite);
     SPRITE_2D* sprite2 = new SPRITE_2D(renderer);
-    sprite2->pos_x = 10;
-    sprite2->pos_y = 10;
-    sprite2->spriteData = SPRITE_PARSER::ParseSprite("../testSprite2.bmp");
+    sprite2->pos_x = 0;
+    sprite2->pos_y = 80;
+    sprite2->spriteData = SPRITE_PARSER::ParseSprite("../bat_attack.bmp");
     sprite2->height = sprite2->spriteData->m_columns;
     sprite2->width = sprite2->spriteData->m_rows;
     engine.scene->addChildNode(sprite2);
+    SPRITE_2D* sprite3 = new SPRITE_2D(renderer);
+    sprite3->pos_x = 59;
+    sprite3->pos_y = 50;
+    sprite3->spriteData = SPRITE_PARSER::ParseSprite("../bat_hit.bmp");
+    sprite3->height = sprite3->spriteData->m_columns;
+    sprite3->width = sprite3->spriteData->m_rows;
+    engine.scene->addChildNode(sprite3);
 
 
 
