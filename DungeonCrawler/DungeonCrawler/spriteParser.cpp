@@ -7,11 +7,9 @@ using namespace std;
 SPRITE_DATA* SPRITE_PARSER::ParseSprite(string spriteName)
 {
 	ifstream ifs;
-	ofstream ofs;
 
 	ifs.open(spriteName, ios::binary);
-	ofs.open("Test.txt");
-
+	
 	if (!ifs)
 	{
 		system("pause");
@@ -47,7 +45,7 @@ SPRITE_DATA* SPRITE_PARSER::ParseSprite(string spriteName)
 	{
 		pixels[i] = new WORD[rows];
 
-		//cout << "Column " << i << " adding an array of size " << rows << "\n";
+		//ofs << "Column " << i << " adding an array of size " << rows << "\n";
 	}
 
 	for (int i = 0; i < image_size / 3; i++)
@@ -78,9 +76,15 @@ SPRITE_DATA* SPRITE_PARSER::ParseSprite(string spriteName)
 				word = word | 0X0008;
 		}
 
-		ofs << std::dec << " R: " << int(R) << " G: " << int(G) << " B: " << int(B) << "  position in file: " << ifs.tellg() << " ROW :" << (i % rows) << " COLUMN : " << columns - ((int)i / rows) - 1 << "\r\n";
+		/*
+		ofs << std::dec << " R: " << int(R) << " G: " << int(G) << " B: " << int(B) << "  position in file: " << ifs.tellg()
+			<< " COLUMN : " << (i % rows) 
+			<< " ROW :" << ((int)i / rows) 
+			<< "\r\n";
+		*/
 
-		pixels[columns - ((int)i / rows) - 1][i % rows] = word;
+		//pixels[rowIndex][columnIndex]
+		pixels[i % columns][rows - ((int)i / columns) - 1] = word;
 	}
 
 	SPRITE_DATA* spriteData = new SPRITE_DATA(pixels, columns, rows);
