@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -143,6 +143,8 @@
     <ClCompile Include="consolebuffer.cpp" />
     <ClCompile Include="DungeonCrawler.cpp" />
     <ClCompile Include="engine2D.cpp" />
+    <ClCompile Include="gameScript.cpp" />
+    <ClCompile Include="MovingBoxScript.cpp" />
     <ClCompile Include="node2D.cpp" />
     <ClCompile Include="renderer2D.cpp" />
     <ClCompile Include="rectangle.cpp" />
@@ -156,6 +158,8 @@
     <ClInclude Include="asset2D.h" />
     <ClInclude Include="consolebuffer.h" />
     <ClInclude Include="engine2D.h" />
+    <ClInclude Include="gameScript.h" />
+    <ClInclude Include="MovingBoxScript.h" />
     <ClInclude Include="node2D.h" />
     <ClInclude Include="renderer2D.h" />
     <ClInclude Include="rectangle.h" />

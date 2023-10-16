@@ -13,59 +13,89 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{834a79de-5d19-4a13-8b38-7961e093304f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Headers">
+      <UniqueIdentifier>{10c92fcc-0b88-4c1d-bc14-77b31bebd17e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Source">
+      <UniqueIdentifier>{294750bf-0f3d-48f4-a57d-d17cd7cea258}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DungeonCrawler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="asset2D.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\Source</Filter>
     </ClCompile>
     <ClCompile Include="consolebuffer.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\Source</Filter>
     </ClCompile>
-    <ClCompile Include="renderer2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rectangle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="scene.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="DungeonCrawler.cpp">
+      <Filter>Engine\Source</Filter>
     </ClCompile>
     <ClCompile Include="engine2D.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript.cpp">
+      <Filter>Engine\Source</Filter>
     </ClCompile>
     <ClCompile Include="node2D.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="rectangle.cpp">
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer2D.cpp">
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="sprite2D.cpp">
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="spriteData.cpp">
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="spriteParser.cpp">
+      <Filter>Engine\Source</Filter>
     </ClCompile>
     <ClCompile Include="text2D.cpp">
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingBoxScript.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="asset2D.h">
-      <Filter>Header Files</Filter>
+      <Filter>Engine\Headers</Filter>
     </ClInclude>
     <ClInclude Include="consolebuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="renderer2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rectangle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="scene.h">
-      <Filter>Header Files</Filter>
+      <Filter>Engine\Headers</Filter>
     </ClInclude>
     <ClInclude Include="engine2D.h">
-      <Filter>Header Files</Filter>
+      <Filter>Engine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript.h">
+      <Filter>Engine\Headers</Filter>
     </ClInclude>
     <ClInclude Include="node2D.h">
-      <Filter>Header Files</Filter>
+      <Filter>Engine\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="text2D.h">
+    <ClInclude Include="rectangle.h">
+      <Filter>Engine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer2D.h">
+      <Filter>Engine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Engine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="sprite2D.h">
+      <Filter>Engine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingBoxScript.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,6 +11,7 @@
 #include "spriteParser.h"
 #include "text2D.h"
 #include "sprite2D.h"
+#include "MovingBoxScript.h"
 
 int main()
 {
@@ -50,6 +51,11 @@ int main()
     text->width = 40;
     text->pos_x = 10;
     text->pos_y = 10;
+    MOVING_BOX_SCRIPT* scriptTest = new MOVING_BOX_SCRIPT();
+    scriptTest->rectangle = rect3;
+    scriptTest->speed_y = 2;
+    scriptTest->speed_x = 2;
+    engine.scripts.push_back(scriptTest);
     SPRITE_2D* sprite = new SPRITE_2D(renderer);
     sprite->pos_x = 60;
     sprite->pos_y = 60;
