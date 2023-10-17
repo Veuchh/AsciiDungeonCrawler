@@ -39,5 +39,5 @@ public:
 	void writePixel(int coord_x, int coord_y, WORD color);
 	void writeChar(int coord_x, int coord_y, CHAR value, WORD color);
 	void fill(WORD color);
-
+	static RENDERER_2D Instance;
 };

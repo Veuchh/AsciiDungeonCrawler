@@ -1,8 +1,9 @@
 #include "renderer2D.h"
-
+RENDERER_2D RENDERER_2D::Instance;
 
 void RENDERER_2D::start()
 {
+    Instance = *this;
     short SCREEN_WIDTH = 0, SCREEN_HEIGHT = 0;
     LONG_PTR new_style = WS_OVERLAPPEDWINDOW | WS_HSCROLL | WS_VSCROLL;
     LONG_PTR setConsoleWindowStyle(INT, LONG_PTR);
