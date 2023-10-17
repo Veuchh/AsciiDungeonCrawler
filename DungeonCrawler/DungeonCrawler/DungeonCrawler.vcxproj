@@ -140,8 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="asset2D.cpp" />
+    <ClCompile Include="combat.cpp" />
     <ClCompile Include="consolebuffer.cpp" />
     <ClCompile Include="DungeonCrawler.cpp" />
+    <ClCompile Include="enemy_data.cpp" />
     <ClCompile Include="engine2D.cpp" />
     <ClCompile Include="gameScript.cpp" />
     <ClCompile Include="interfaceBox.cpp" />
@@ -160,7 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="asset2D.h" />
+    <ClInclude Include="combat.h" />
     <ClInclude Include="consolebuffer.h" />
+    <ClInclude Include="enemy_data.h" />
     <ClInclude Include="engine2D.h" />
     <ClInclude Include="gameScript.h" />
     <ClInclude Include="interfaceBox.h" />
