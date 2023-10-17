@@ -1,0 +1,105 @@
+Initiating combat. Next attack in 10 frames
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 90
+Next attack in 10 frames
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 80
+Next attack in 9 frames
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 70
+Next attack in 9 frames
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 60
+Next attack in 10 frames
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 50
+Next attack in 9 frames
+Defend input
+Enemy Attacks
+Player defended the attack !
+Next attack in 5 frames
+Defend over, starting cooldown
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 40
+Next attack in 5 frames
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 30
+Next attack in 9 frames
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 20
+Next attack in 7 frames
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 10
+Next attack in 10 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 10 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 6 frames
+Defend input
+Enemy Attacks
+Player defended the attack !
+Next attack in 8 frames
+Defend over, starting cooldown
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 6 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 10 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 6 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 7 frames
+Defend input
+Enemy Attacks
+Player defended the attack !
+Next attack in 8 frames
+Defend over, starting cooldown
+Attack input
+ENEMY HIT. REMAINING HP : 90
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 5 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 8 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 5 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 7 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 8 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 9 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 9 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 8 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 7 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 7 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 10 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 10 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 5 frames
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 10 frames
