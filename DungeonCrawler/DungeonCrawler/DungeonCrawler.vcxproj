@@ -140,14 +140,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="asset2D.cpp" />
+    <ClCompile Include="combat.cpp" />
     <ClCompile Include="consolebuffer.cpp" />
     <ClCompile Include="DungeonCrawler.cpp" />
+    <ClCompile Include="enemy_data.cpp" />
     <ClCompile Include="engine2D.cpp" />
     <ClCompile Include="gameScript.cpp" />
     <ClCompile Include="interfaceBox.cpp" />
     <ClCompile Include="menuScene.cpp" />
     <ClCompile Include="MovingBoxScript.cpp" />
     <ClCompile Include="node2D.cpp" />
+    <ClCompile Include="player_data.cpp" />
     <ClCompile Include="renderer2D.cpp" />
     <ClCompile Include="rectangle.cpp" />
     <ClCompile Include="roomScene.cpp" />
@@ -160,13 +163,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="asset2D.h" />
+    <ClInclude Include="combat.h" />
     <ClInclude Include="consolebuffer.h" />
+    <ClInclude Include="enemy_data.h" />
     <ClInclude Include="engine2D.h" />
     <ClInclude Include="gameScript.h" />
     <ClInclude Include="interfaceBox.h" />
     <ClInclude Include="menuScene.h" />
     <ClInclude Include="MovingBoxScript.h" />
     <ClInclude Include="node2D.h" />
+    <ClInclude Include="player_data.h" />
     <ClInclude Include="renderer2D.h" />
     <ClInclude Include="rectangle.h" />
     <ClInclude Include="roomScene.h" />
