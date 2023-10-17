@@ -14,7 +14,17 @@ void COMBAT::Update()
 
 	HandleDefend();
 
-	if (m_remainingFramesBeforeEnemyAttack <= 0)
+	if (!m_enemy->m_isEnemyAttacking && m_remainingFramesBeforeEnemyAttack <= 0)
+	{
+		m_enemy->m_isEnemyAttacking = true;
+
+		m_remainingFramesBeforeEnemyAttack = m_enemy->GetAttackStartupDelay();
+		ofs << "Start Enemy Attack Startup Delay" << std::endl;
+
+		m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_attack.bmp");
+	}
+
+	else if (m_enemy->m_isEnemyAttacking && m_remainingFramesBeforeEnemyAttack <= 0)
 	{
 		ofs << "Enemy Attacks" << std::endl;
 
@@ -38,9 +48,10 @@ void COMBAT::Update()
 			ofs << "Player defended the attack !" << std::endl;
 		}
 
-		//TODO : attack animation
+		m_enemy->m_isEnemyAttacking = false;
 		m_remainingFramesBeforeEnemyAttack = m_enemy->GetRandomCooldownDuration();
 		ofs << "Next attack in " << m_remainingFramesBeforeEnemyAttack << " frames" << std::endl;
+		m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_idle.bmp");
 	}
 }
 
@@ -86,7 +97,14 @@ void  COMBAT::HandleDefend()
 		{
 			m_isDefending = false;
 			m_remainingDefendCooldown = DEFEND_COOLDOWN;
-			ofs << "Defend over, starting cooldown" << std::endl;
+			ofs << "Defend over, starting cooldown" << std::endl; 
+			m_shieldSprite->spriteData = SPRITE_PARSER::ParseSprite("../shield_down.bmp");
+			return;
+		}
+
+		if (m_remainingDefendCooldown <= 0)
+		{
+			ofs << "Cooldown over, can defend again" << std::endl;
 		}
 
 		return;
@@ -97,13 +115,14 @@ void  COMBAT::HandleDefend()
 		m_isDefending = true;
 		m_remainingDefendCooldown = DEFEND_DURATION;
 		ofs << "Defend input" << std::endl;
+		m_shieldSprite->spriteData = SPRITE_PARSER::ParseSprite("../shield_up.bmp");
 	}
 }
 
 COMBAT::COMBAT()
 {
 	ofs.open("enemyLogs.txt");
-	m_enemy = new ENEMY_DATA(5, 10, 100, "../bat_idle.bmp");
+	m_enemy = new ENEMY_DATA(5, 10, 5, 100, "../bat_idle.bmp");
 
 	m_remainingFramesBeforeEnemyAttack = m_enemy->GetRandomCooldownDuration();
 	ofs << "Initiating combat. Next attack in " << m_remainingFramesBeforeEnemyAttack << " frames" << std::endl;

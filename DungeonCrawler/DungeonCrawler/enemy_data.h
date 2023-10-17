@@ -7,13 +7,16 @@ class ENEMY_DATA
 public:
 	int GetRandomCooldownDuration();
 	int GetCurrentHP();
+	int GetAttackStartupDelay();
 	bool Hit(int healthAmount);
-	ENEMY_DATA(int minCooldown, int maxCooldown, int maxHP, std::string enemySprite);
+	bool m_isEnemyAttacking = false;
+	ENEMY_DATA(int minCooldown, int maxCooldown, int attackStartupDelay, int maxHP, std::string enemySprite);
+	SPRITE_2D* m_enemySprite;
 private:
 	int m_minCooldown;
 	int m_maxCooldown;
 	int m_maxHP;
 	int m_currentHP;
-	SPRITE_2D* m_enemySprite;
+	int m_attackStartupDelay;
 };
 

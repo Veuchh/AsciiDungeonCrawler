@@ -14,6 +14,11 @@ int ENEMY_DATA::GetCurrentHP()
 	return m_currentHP;
 }
 
+int ENEMY_DATA::GetAttackStartupDelay()
+{
+	return m_attackStartupDelay;
+}
+
 /// <param name="healthAmount">The amount of health to remove to the enemy. It has to be positive.</param>
 /// <returns>True if the enemy hp is below zero after the hit, false otherwise</returns>
 bool ENEMY_DATA::Hit(int healthAmount)
@@ -22,8 +27,8 @@ bool ENEMY_DATA::Hit(int healthAmount)
 	return m_currentHP <= 0;
 }
 
-ENEMY_DATA::ENEMY_DATA(int minCooldown, int maxCooldown, int maxHP, std::string enemySprite) :
-	m_minCooldown(minCooldown), m_maxCooldown(maxCooldown), m_maxHP(maxHP)
+ENEMY_DATA::ENEMY_DATA(int minCooldown, int maxCooldown, int attackStartupDelay, int maxHP, std::string enemySprite) :
+	m_minCooldown(minCooldown), m_maxCooldown(maxCooldown), m_attackStartupDelay(attackStartupDelay), m_maxHP(maxHP)
 {
 	m_currentHP = maxHP;
 
