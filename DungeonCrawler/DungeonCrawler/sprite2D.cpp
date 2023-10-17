@@ -17,7 +17,7 @@ void SPRITE_2D::Draw()
         {
             if (spriteData->m_pixels[col][row] < 0x1000)
             {
-                renderer->writePixel(pos_x + row + offset_y, pos_y + col + offset_x, spriteData->m_pixels[col][row]);
+                renderer->writePixel(pos_x + row + offset_x, pos_y + col + offset_y, spriteData->m_pixels[col][row]);
             }
         }
     }
