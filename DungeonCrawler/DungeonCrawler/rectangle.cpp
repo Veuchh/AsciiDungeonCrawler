@@ -14,7 +14,7 @@ void RECTANGLE::Draw()
 		{
 			if (outline == true)
 			{
-				if (i-pos_x < outlineSize || j-pos_y < outlineSize || height - i + pos_x <= outlineSize || width - j + pos_y <= outlineSize)
+				if ((i - (pos_x + offset_x)) < outlineSize || (j - (pos_y + offset_y)) < outlineSize || (height - i + (pos_x + offset_x)) <= outlineSize || (width - j + (pos_y + offset_y)) <= outlineSize)
 				{
 					renderer->writePixel(i, j, outlineColor);
 					continue;

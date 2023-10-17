@@ -3,5 +3,5 @@
 
 class USER_INTERFACE : public NODE_2D
 {
-
+	USER_INTER
 };

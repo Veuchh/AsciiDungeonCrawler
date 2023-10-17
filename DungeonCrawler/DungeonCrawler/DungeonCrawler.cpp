@@ -57,6 +57,7 @@ int main()
     scriptTest->speed_y = 2;
     scriptTest->speed_x = 2;
     engine.scripts.push_back(scriptTest);
+    rect3->anchor =ANCHOR_CENTERED;
     SPRITE_2D* sprite = new SPRITE_2D(renderer);
     sprite->pos_x = 0;
     sprite->pos_y = 0;
@@ -84,15 +85,16 @@ int main()
 
 
     INTERFACE_BOX* box = new INTERFACE_BOX(renderer);
-    engine.scene->addChildNode(rect3);
-    rect3->height = 20;
-    rect3->width = 20;
-    rect3->pos_x = 30;
-    rect3->pos_y = 30;
-    rect3->color = 0x0B;
-    rect3->outline = true;
-    rect3->outlineSize = 2;
-    rect3->outlineColor = 0x00;
+    engine.scene->addChildNode(box);
+    box->height = 20;
+    box->width = 20;
+    box->pos_x = 30;
+    box->pos_y = 30;
+    box->color = 0x0B;
+    box->outline = true;
+    box->outlineSize = 2;
+    box->outlineColor = 0x00;
+    box->SetPosition(SCREEN_LEFT);
 
 
 
