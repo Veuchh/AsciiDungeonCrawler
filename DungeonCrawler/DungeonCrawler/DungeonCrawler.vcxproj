@@ -144,27 +144,38 @@
     <ClCompile Include="DungeonCrawler.cpp" />
     <ClCompile Include="engine2D.cpp" />
     <ClCompile Include="gameScript.cpp" />
+    <ClCompile Include="interfaceBox.cpp" />
+    <ClCompile Include="menuScene.cpp" />
     <ClCompile Include="MovingBoxScript.cpp" />
     <ClCompile Include="node2D.cpp" />
     <ClCompile Include="renderer2D.cpp" />
     <ClCompile Include="rectangle.cpp" />
+    <ClCompile Include="roomScene.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="sprite2D.cpp" />
     <ClCompile Include="spriteData.cpp" />
     <ClCompile Include="spriteParser.cpp" />
     <ClCompile Include="text2D.cpp" />
+    <ClCompile Include="userInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="asset2D.h" />
     <ClInclude Include="consolebuffer.h" />
     <ClInclude Include="engine2D.h" />
     <ClInclude Include="gameScript.h" />
+    <ClInclude Include="interfaceBox.h" />
+    <ClInclude Include="menuScene.h" />
     <ClInclude Include="MovingBoxScript.h" />
     <ClInclude Include="node2D.h" />
     <ClInclude Include="renderer2D.h" />
     <ClInclude Include="rectangle.h" />
+    <ClInclude Include="roomScene.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="sprite2D.h" />
+    <ClInclude Include="spriteData.h" />
+    <ClInclude Include="spriteParser.h" />
+    <ClInclude Include="text2D.h" />
+    <ClInclude Include="userInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

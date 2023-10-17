@@ -12,6 +12,7 @@
 #include "text2D.h"
 #include "sprite2D.h"
 #include "MovingBoxScript.h"
+#include "interfaceBox.h"
 
 int main()
 {
@@ -76,7 +77,22 @@ int main()
     sprite3->spriteData = SPRITE_PARSER::ParseSprite("../bat_hit.bmp");
     sprite3->height = sprite3->spriteData->m_columns;
     sprite3->width = sprite3->spriteData->m_rows;
+    sprite3->SetPosition(SCREEN_CENTER);
     engine.scene->addChildNode(sprite3);
+    sprite2->SetPosition(SCREEN_LEFT);
+    rect->SetPosition(SCREEN_BOTTOM);
+
+
+    INTERFACE_BOX* box = new INTERFACE_BOX(renderer);
+    engine.scene->addChildNode(rect3);
+    rect3->height = 20;
+    rect3->width = 20;
+    rect3->pos_x = 30;
+    rect3->pos_y = 30;
+    rect3->color = 0x0B;
+    rect3->outline = true;
+    rect3->outlineSize = 2;
+    rect3->outlineColor = 0x00;
 
 
 

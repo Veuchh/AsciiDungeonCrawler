@@ -4,7 +4,12 @@ SPRITE_2D::SPRITE_2D(RENDERER_2D* renderer) : ASSET_2D(renderer) {}
 
 void SPRITE_2D::Draw()
 {
-
+    if (!isVisible)
+    {
+        return;
+    }
+    int offset_x = GetOffsetX();
+    int offset_y = GetOffsetY();
     //pixels[rowIndex][columnIndex]
     for (size_t row = 0; row < spriteData->m_rows; row++)
     {
@@ -12,7 +17,7 @@ void SPRITE_2D::Draw()
         {
             if (spriteData->m_pixels[col][row] < 0x1000)
             {
-                renderer->writePixel(pos_x + row, pos_y + col, spriteData->m_pixels[col][row]);
+                renderer->writePixel(pos_x + row + offset_y, pos_y + col + offset_x, spriteData->m_pixels[col][row]);
             }
         }
     }

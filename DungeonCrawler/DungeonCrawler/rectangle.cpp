@@ -2,9 +2,15 @@
 
 void RECTANGLE::Draw()
 {
-	for (int i = pos_x; i < pos_x+height; ++i)
+	if (!isVisible)
 	{
-		for (int j = pos_y; j < pos_y+width; ++j)
+		return;
+	}
+	int offset_x = GetOffsetX();
+	int offset_y = GetOffsetY();
+	for (int i = pos_x + offset_x; i < pos_x + height + offset_x; ++i)
+	{
+		for (int j = pos_y + offset_y; j < pos_y+width + offset_y; ++j)
 		{
 			if (outline == true)
 			{

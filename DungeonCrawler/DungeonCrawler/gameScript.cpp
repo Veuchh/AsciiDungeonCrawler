@@ -13,7 +13,7 @@ void GAME_SCRIPT::Update()
 {
 	if (isRunning)
 	{
-
+		//Your code goes here. It will be executed for each loop.
 	}
 }
 void GAME_SCRIPT::Stop()
