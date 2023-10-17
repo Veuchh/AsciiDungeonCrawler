@@ -11,13 +11,14 @@ class COMBAT : public GAME_SCRIPT
 private:
 	ENEMY_DATA* m_enemy;
 	int m_remainingFramesBeforeEnemyAttack;
-	int m_remainingAttackCooldown;
-	int m_remainingDefendCooldown;
+	int m_remainingAttackCooldown = 0;
+	int m_remainingDefendCooldown = 0;
 	bool m_isDefending = false;
 	void HandleAttack(); 
 	void HandleDefend();
 	SPRITE_2D* m_swordSprite;
 	SPRITE_2D* m_shieldSprite;
+	SPRITE_2D* m_glyphSprite;
 public:
 	virtual void Update();
 	COMBAT();

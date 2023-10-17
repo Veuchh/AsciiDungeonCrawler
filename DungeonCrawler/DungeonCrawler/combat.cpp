@@ -8,6 +8,7 @@ std::ofstream ofs;
 
 void COMBAT::Update()
 {
+	m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_idle.bmp");
 	m_remainingFramesBeforeEnemyAttack--;
 
 	HandleAttack();
@@ -21,12 +22,13 @@ void COMBAT::Update()
 		m_remainingFramesBeforeEnemyAttack = m_enemy->GetAttackStartupDelay();
 		ofs << "Start Enemy Attack Startup Delay" << std::endl;
 
-		m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_attack.bmp");
+		m_glyphSprite->isVisible = true;
 	}
 
 	else if (m_enemy->m_isEnemyAttacking && m_remainingFramesBeforeEnemyAttack <= 0)
 	{
 		ofs << "Enemy Attacks" << std::endl;
+		m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_attack.bmp");
 
 		if (!m_isDefending)
 		{
@@ -51,7 +53,7 @@ void COMBAT::Update()
 		m_enemy->m_isEnemyAttacking = false;
 		m_remainingFramesBeforeEnemyAttack = m_enemy->GetRandomCooldownDuration();
 		ofs << "Next attack in " << m_remainingFramesBeforeEnemyAttack << " frames" << std::endl;
-		m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_idle.bmp");
+		m_glyphSprite->isVisible = false;
 	}
 }
 
@@ -97,7 +99,7 @@ void  COMBAT::HandleDefend()
 		{
 			m_isDefending = false;
 			m_remainingDefendCooldown = DEFEND_COOLDOWN;
-			ofs << "Defend over, starting cooldown" << std::endl; 
+			ofs << "Defend over, starting cooldown" << std::endl;
 			m_shieldSprite->spriteData = SPRITE_PARSER::ParseSprite("../shield_down.bmp");
 			return;
 		}
@@ -127,6 +129,15 @@ COMBAT::COMBAT()
 	m_remainingFramesBeforeEnemyAttack = m_enemy->GetRandomCooldownDuration();
 	ofs << "Initiating combat. Next attack in " << m_remainingFramesBeforeEnemyAttack << " frames" << std::endl;
 
+	m_glyphSprite = new SPRITE_2D(RENDERER_2D::Instance);
+	m_glyphSprite->spriteData = SPRITE_PARSER::ParseSprite("../glyph.bmp");
+	m_glyphSprite->pos_x = 0;
+	m_glyphSprite->pos_y = 0;
+	m_glyphSprite->height = m_glyphSprite->spriteData->m_columns;
+	m_glyphSprite->width = m_glyphSprite->spriteData->m_rows;
+	SCENE::Instance->addChildNode(m_glyphSprite);
+	m_glyphSprite->isVisible = false;
+
 	m_swordSprite = new SPRITE_2D(RENDERER_2D::Instance);
 	m_swordSprite->spriteData = SPRITE_PARSER::ParseSprite("../sword_idle.bmp");
 	m_swordSprite->pos_x = 0;
@@ -142,4 +153,6 @@ COMBAT::COMBAT()
 	m_shieldSprite->height = m_shieldSprite->spriteData->m_columns;
 	m_shieldSprite->width = m_shieldSprite->spriteData->m_rows;
 	SCENE::Instance->addChildNode(m_shieldSprite);
+
+
 }
