@@ -15,10 +15,18 @@ void COMBAT::Update()
 			if (isPlayerDead)
 			{
 				PLAYER_DATA::Instance->ResetPlayer();
+				isPlayerDead = false;
 			}
 			m_enemy->ResetEnemy();
 			ui->messageBox->isVisible = false;
 			inCombat = true;
+			m_remainingFramesBeforeEnemyAttack = m_enemy->GetRandomCooldownDuration();
+			m_remainingAttackCooldown = false;
+			m_remainingDefendCooldown = false;
+			m_isDefending = false;
+			m_swordSprite->m_isPlayingAnimation = false;
+			m_swordSprite->m_sprite->spriteData = m_swordSprite->m_defaultSprite;
+			m_shieldSprite->spriteData = m_shieldDownSprite;
 		}
 		return;
 	}
@@ -31,7 +39,7 @@ void COMBAT::Update()
 	{
 		m_framesBeforeEnemyHitAnim--;
 
-		if (m_framesBeforeEnemyHitAnim== 0)
+		if (m_framesBeforeEnemyHitAnim == 0)
 		{
 			m_enemy->m_enemySprite->spriteData = m_enemy->m_enemySpriteHit;
 		}
@@ -86,7 +94,7 @@ void COMBAT::Update()
 
 	ui->enemy_healthBar->value = m_enemy->GetCurrentPercentHP();
 	ui->player_healthBar->value = PLAYER_DATA::Instance->GetCurrentPercentHP();
-	
+
 
 
 }
@@ -117,6 +125,7 @@ void COMBAT::HandleAttack()
 
 		if (enemyDead)
 		{
+			m_enemy->m_enemySprite->spriteData = m_enemy->m_enemySpriteHit;
 			inCombat = false;
 			ui->messageBox->isVisible = true;
 			ui->messageText->content = "PRESS SPACE TO CONTINUE";
@@ -149,7 +158,7 @@ void  COMBAT::HandleDefend()
 			ui->shieldBox->color = ui->cooldownColor;
 			m_remainingDefendCooldown = DEFEND_COOLDOWN;
 			ofs << "Defend over, starting cooldown" << std::endl;
-			m_shieldSprite->spriteData = SPRITE_PARSER::ParseSprite("../shield_down.bmp");
+			m_shieldSprite->spriteData = m_shieldDownSprite;
 			return;
 		}
 
@@ -167,6 +176,7 @@ void  COMBAT::HandleDefend()
 		m_isDefending = true;
 		m_remainingDefendCooldown = DEFEND_DURATION;
 		ofs << "Defend input" << std::endl;
+			m_shieldSprite->spriteData = m_shieldUpSprite;
 		m_shieldSprite->spriteData = SPRITE_PARSER::ParseSprite("../shield_up.bmp");
 	}
 }
@@ -197,8 +207,11 @@ COMBAT::COMBAT()
 
 	m_swordSprite = new ANIMATED_SPRITE("../Sword_idle.bmp", "../Sword_Slash_", 12);
 
+	m_shieldDownSprite = SPRITE_PARSER::ParseSprite("../shield_down.bmp");
+	m_shieldUpSprite = SPRITE_PARSER::ParseSprite("../shield_up.bmp");
+
 	m_shieldSprite = new SPRITE_2D(RENDERER_2D::Instance);
-	m_shieldSprite->spriteData = SPRITE_PARSER::ParseSprite("../shield_down.bmp");
+	m_shieldSprite->spriteData = m_shieldDownSprite;
 	m_shieldSprite->pos_x = 0;
 	m_shieldSprite->pos_y = 0;
 	m_shieldSprite->height = m_shieldSprite->spriteData->m_columns;

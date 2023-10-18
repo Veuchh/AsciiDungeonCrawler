@@ -26,6 +26,8 @@ private:
 	SPRITE_2D* m_shieldSprite;
 	SPRITE_2D* m_glyphSprite;
 	SPRITE_2D* m_roomSprite;
+	SPRITE_DATA* m_shieldUpSprite;
+	SPRITE_DATA* m_shieldDownSprite;
 public:
 	virtual void Update();
 	COMBAT();

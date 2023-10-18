@@ -49,3 +49,8 @@ ENEMY_DATA::ENEMY_DATA(int minCooldown, int maxCooldown, int attackStartupDelay,
 	m_enemySprite->width = m_enemySprite->spriteData->m_rows;
 	SCENE::Instance->addChildNode(m_enemySprite);
 }
+
+void ENEMY_DATA::ResetEnemy()
+{
+	m_currentHP = m_maxHP;
+}

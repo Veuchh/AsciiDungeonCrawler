@@ -8,11 +8,11 @@
 class ANIMATED_SPRITE : GAME_SCRIPT
 {
 private:
-	SPRITE_DATA* m_defaultSprite;
 	std::vector<SPRITE_DATA*> m_AnimationFrames;
-	bool m_isPlayingAnimation = false;
 	int m_animationFrameIndex = 0;
 public:
+	SPRITE_DATA* m_defaultSprite;
+	bool m_isPlayingAnimation = false;
 	SPRITE_2D* m_sprite;
 	virtual void Update();
 	void PlayAnimation();

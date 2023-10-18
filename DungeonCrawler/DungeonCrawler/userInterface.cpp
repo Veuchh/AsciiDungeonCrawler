@@ -18,7 +18,7 @@ USER_INTERFACE::USER_INTERFACE(RENDERER_2D* renderer) : NODE_2D(renderer){
 	enemy_healthBar->color = 0;
 
 	messageBox = new INTERFACE_BOX(RENDERER_2D::Instance);
-	messageBox->outlineColor = 0x03;
+	messageBox->outlineColor = 0x8;
 	messageBox->width = 36;
 	messageBox->height = 20;
 	messageText = new TEXT_2D(RENDERER_2D::Instance);
