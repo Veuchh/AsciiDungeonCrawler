@@ -7,6 +7,7 @@ public:
 	int GetCurrentPercentHP();
 	bool HitPlayer(int damage);
 	PLAYER_DATA(int maxHP, int playerAttack);
+	void ResetPlayer();
 	static PLAYER_DATA* Instance;
 private:
 	int m_maxHP;

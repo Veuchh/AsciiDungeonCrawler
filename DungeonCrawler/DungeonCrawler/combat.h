@@ -17,6 +17,7 @@ private:
 	bool inCombat = false;
 	bool isPlayerDead = false;
 	bool m_isDefending = false;
+	int m_framesBeforeEnemyHitAnim;
 	void HandleAttack(); 
 	void HandleDefend();
 

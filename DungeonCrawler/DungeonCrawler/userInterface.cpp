@@ -5,17 +5,17 @@ USER_INTERFACE::USER_INTERFACE(RENDERER_2D* renderer) : NODE_2D(renderer){
 	player_healthBar->width = PIXEL_WIDTH;
 	player_healthBar->height = 8;
 	player_healthBar->outline = true;
-	player_healthBar->outlineSize = 2;
-	player_healthBar->outlineColor = 0x00;
-	player_healthBar->color = 0x00;
+	player_healthBar->outlineSize = 1;
+	player_healthBar->outlineColor = 0x8;
+	player_healthBar->color = 0;
 
 	enemy_healthBar = new HEALTH_BAR(RENDERER_2D::Instance);
 	enemy_healthBar->width = 102;
 	enemy_healthBar->height = 6;
 	enemy_healthBar->outline = true;
-	enemy_healthBar->outlineSize = 2;
-	enemy_healthBar->outlineColor = 0x00;
-	enemy_healthBar->color = 0x00;
+	enemy_healthBar->outlineSize = 1;
+	enemy_healthBar->outlineColor = 0x8;
+	enemy_healthBar->color = 0;
 
 	messageBox = new INTERFACE_BOX(RENDERER_2D::Instance);
 	messageBox->outlineColor = 0x03;
@@ -30,7 +30,7 @@ USER_INTERFACE::USER_INTERFACE(RENDERER_2D* renderer) : NODE_2D(renderer){
 
 	shieldBox = new INTERFACE_BOX(RENDERER_2D::Instance);
 	shieldBox->anchor = ANCHOR_CENTERED;
-	shieldBox->outlineColor = 0x03;
+	shieldBox->outlineColor = 0x8;
 	shieldBox->pos_x = PIXEL_HEIGHT - 20;
 	shieldBox->pos_y = PIXEL_WIDTH*2 / 10;
 	shieldBox->width = 18;
@@ -49,7 +49,7 @@ USER_INTERFACE::USER_INTERFACE(RENDERER_2D* renderer) : NODE_2D(renderer){
 
 	swordBox = new INTERFACE_BOX(RENDERER_2D::Instance);
 	swordBox->anchor = ANCHOR_CENTERED;
-	swordBox->outlineColor = 0x03;
+	swordBox->outlineColor = 0x8;
 	swordBox->pos_x = PIXEL_HEIGHT-20;
 	swordBox->pos_y = PIXEL_WIDTH - PIXEL_WIDTH*2/10;
 	swordBox->width = 18;

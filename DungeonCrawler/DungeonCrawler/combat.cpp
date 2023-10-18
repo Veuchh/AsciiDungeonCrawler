@@ -23,8 +23,18 @@ void COMBAT::Update()
 	}
 	m_swordSprite->Update();
 
-	m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_idle.bmp");
+	m_enemy->m_enemySprite->spriteData = m_enemy->m_enemySpriteIdle;
 	m_remainingFramesBeforeEnemyAttack--;
+
+	if (m_framesBeforeEnemyHitAnim > 0)
+	{
+		m_framesBeforeEnemyHitAnim--;
+
+		if (m_framesBeforeEnemyHitAnim== 0)
+		{
+			m_enemy->m_enemySprite->spriteData = m_enemy->m_enemySpriteHit;
+		}
+	}
 
 	HandleAttack();
 
@@ -43,7 +53,7 @@ void COMBAT::Update()
 	else if (m_enemy->m_isEnemyAttacking && m_remainingFramesBeforeEnemyAttack <= 0)
 	{
 		ofs << "Enemy Attacks" << std::endl;
-		m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_attack.bmp");
+		m_enemy->m_enemySprite->spriteData = m_enemy->m_enemySpriteAttack;
 
 		if (!m_isDefending)
 		{
@@ -113,7 +123,7 @@ void COMBAT::HandleAttack()
 		}
 		else
 		{
-			m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_hit.bmp");
+			m_framesBeforeEnemyHitAnim = 5;
 			ofs << "ENEMY HIT. REMAINING HP : " << m_enemy->GetCurrentHP() << std::endl;
 		}
 	}
@@ -179,9 +189,9 @@ COMBAT::COMBAT()
 	m_glyphSprite->height = m_glyphSprite->spriteData->m_columns;
 	m_glyphSprite->width = m_glyphSprite->spriteData->m_rows;
 	SCENE::Instance->addChildNode(m_glyphSprite);
-	//m_glyphSprite->isVisible = false;
+	m_glyphSprite->isVisible = false;
 
-	m_enemy = new ENEMY_DATA(5, 10, 5, 100, "../bat_idle.bmp");
+	m_enemy = new ENEMY_DATA(5, 10, 5, 100, "../bat_idle.bmp", "../bat_attack.bmp", "../bat_hit.bmp");
 	m_remainingFramesBeforeEnemyAttack = m_enemy->GetRandomCooldownDuration();
 
 	m_swordSprite = new ANIMATED_SPRITE("../Sword_idle.bmp", "../Sword_Slash_", 12);

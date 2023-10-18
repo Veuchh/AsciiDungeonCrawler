@@ -30,3 +30,8 @@ PLAYER_DATA::PLAYER_DATA(int maxHP, int playerAttack):
 	Instance = this;
 	m_currentHP = m_maxHP;
 }
+
+void PLAYER_DATA::ResetPlayer()
+{
+	m_currentHP = m_maxHP;
+}

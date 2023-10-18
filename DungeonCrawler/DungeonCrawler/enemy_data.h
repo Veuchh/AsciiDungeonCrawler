@@ -11,8 +11,11 @@ public:
 	int GetAttackStartupDelay();
 	bool Hit(int healthAmount);
 	bool m_isEnemyAttacking = false;
-	ENEMY_DATA(int minCooldown, int maxCooldown, int attackStartupDelay, int maxHP, std::string enemySprite);
+	ENEMY_DATA(int minCooldown, int maxCooldown, int attackStartupDelay, int maxHP, std::string enemySprite, std::string enemyAttackSprite, std::string enemyHitSprite);
 	SPRITE_2D* m_enemySprite;
+	SPRITE_DATA* m_enemySpriteIdle;
+	SPRITE_DATA* m_enemySpriteAttack;
+	SPRITE_DATA* m_enemySpriteHit;
 private:
 	int m_minCooldown;
 	int m_maxCooldown;
