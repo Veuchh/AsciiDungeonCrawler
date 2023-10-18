@@ -16,6 +16,7 @@ public:
 	SPRITE_DATA* m_enemySpriteIdle;
 	SPRITE_DATA* m_enemySpriteAttack;
 	SPRITE_DATA* m_enemySpriteHit;
+	void ResetEnemy();
 private:
 	int m_minCooldown;
 	int m_maxCooldown;
