@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="animated_sprite.cpp" />
     <ClCompile Include="asset2D.cpp" />
     <ClCompile Include="combat.cpp" />
     <ClCompile Include="consolebuffer.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="userInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="animated_sprite.h" />
     <ClInclude Include="asset2D.h" />
     <ClInclude Include="combat.h" />
     <ClInclude Include="consolebuffer.h" />

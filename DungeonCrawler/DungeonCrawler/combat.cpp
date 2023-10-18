@@ -8,6 +8,8 @@ std::ofstream ofs;
 
 void COMBAT::Update()
 {
+	m_swordSprite->Update();
+
 	m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_idle.bmp");
 	m_remainingFramesBeforeEnemyAttack--;
 
@@ -72,7 +74,7 @@ void COMBAT::HandleAttack()
 
 		m_remainingAttackCooldown = ATTACK_COOLDOWN;
 
-		//TODO Add sword animation
+		m_swordSprite->PlayAnimation();
 
 		bool enemyDead = m_enemy->Hit(PLAYER_DATA::Instance->GetPlayerAttack());
 
@@ -137,13 +139,7 @@ COMBAT::COMBAT()
 	m_enemy = new ENEMY_DATA(5, 10, 5, 100, "../bat_idle.bmp");
 	m_remainingFramesBeforeEnemyAttack = m_enemy->GetRandomCooldownDuration();
 
-	m_swordSprite = new SPRITE_2D(RENDERER_2D::Instance);
-	m_swordSprite->spriteData = SPRITE_PARSER::ParseSprite("../sword_idle.bmp");
-	m_swordSprite->pos_x = 0;
-	m_swordSprite->pos_y = 0;
-	m_swordSprite->height = m_swordSprite->spriteData->m_columns;
-	m_swordSprite->width = m_swordSprite->spriteData->m_rows;
-	SCENE::Instance->addChildNode(m_swordSprite);
+	m_swordSprite = new ANIMATED_SPRITE("../Sword_idle.bmp", "../Sword_Slash_", 12);
 
 	m_shieldSprite = new SPRITE_2D(RENDERER_2D::Instance);
 	m_shieldSprite->spriteData = SPRITE_PARSER::ParseSprite("../shield_down.bmp");

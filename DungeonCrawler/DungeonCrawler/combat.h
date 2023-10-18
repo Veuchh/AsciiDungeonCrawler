@@ -1,5 +1,5 @@
 #pragma once
-#include "gameScript.h"
+#include "animated_sprite.h"
 #include "enemy_data.h"
 
 #define ATTACK_COOLDOWN 20;
@@ -16,7 +16,7 @@ private:
 	bool m_isDefending = false;
 	void HandleAttack(); 
 	void HandleDefend();
-	SPRITE_2D* m_swordSprite;
+	ANIMATED_SPRITE* m_swordSprite;
 	SPRITE_2D* m_shieldSprite;
 	SPRITE_2D* m_glyphSprite;
 public:
