@@ -1,29 +1,12 @@
 Initiating combat. Next attack in 10 frames
-Start Enemy Attack Startup Delay
 Defend input
-Attack input
-ENEMY HIT. REMAINING HP : 90
-Enemy Attacks
-Player defended the attack !
-Next attack in 10 frames
-Defend over, starting cooldown
-Cooldown over, can defend again
 Start Enemy Attack Startup Delay
+Defend over, starting cooldown
 Enemy Attacks
 PLAYER HIT ! REMAINING HP : 90
-Next attack in 9 frames
-Start Enemy Attack Startup Delay
-Defend input
-Enemy Attacks
-Player defended the attack !
-Next attack in 9 frames
-Cooldown over, can defend again
-Start Enemy Attack Startup Delay
-Defend input
-Enemy Attacks
-Player defended the attack !
 Next attack in 10 frames
-Defend over, starting cooldown
+Attack input
+ENEMY HIT. REMAINING HP : 90
 Cooldown over, can defend again
 Defend input
 Start Enemy Attack Startup Delay
@@ -34,33 +17,126 @@ Next attack in 9 frames
 Attack input
 ENEMY HIT. REMAINING HP : 80
 Cooldown over, can defend again
-Defend input
 Start Enemy Attack Startup Delay
-Defend over, starting cooldown
 Enemy Attacks
 PLAYER HIT ! REMAINING HP : 70
-Next attack in 5 frames
-Cooldown over, can defend again
+Next attack in 9 frames
 Start Enemy Attack Startup Delay
-Attack input
-ENEMY HIT. REMAINING HP : 70
 Enemy Attacks
 PLAYER HIT ! REMAINING HP : 60
-Next attack in 5 frames
+Next attack in 10 frames
 Start Enemy Attack Startup Delay
 Enemy Attacks
 PLAYER HIT ! REMAINING HP : 50
 Next attack in 9 frames
-Defend input
 Start Enemy Attack Startup Delay
-Defend over, starting cooldown
 Enemy Attacks
 PLAYER HIT ! REMAINING HP : 40
+Next attack in 5 frames
+Start Enemy Attack Startup Delay
+Defend input
+Enemy Attacks
+Player defended the attack !
+Next attack in 5 frames
+Defend over, starting cooldown
+Start Enemy Attack Startup Delay
+Cooldown over, can defend again
+Attack input
+ENEMY HIT. REMAINING HP : 70
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 30
+Next attack in 9 frames
+Start Enemy Attack Startup Delay
+Defend input
+Enemy Attacks
+Player defended the attack !
 Next attack in 7 frames
+Defend over, starting cooldown
+Cooldown over, can defend again
+Start Enemy Attack Startup Delay
+Defend input
+Enemy Attacks
+Player defended the attack !
+Next attack in 10 frames
+Defend over, starting cooldown
+Cooldown over, can defend again
+Start Enemy Attack Startup Delay
+Defend input
+Enemy Attacks
+Player defended the attack !
+Next attack in 10 frames
 Attack input
 ENEMY HIT. REMAINING HP : 60
+Defend over, starting cooldown
 Cooldown over, can defend again
 Start Enemy Attack Startup Delay
 Enemy Attacks
-PLAYER HIT ! REMAINING HP : 30
+PLAYER HIT ! REMAINING HP : 20
+Next attack in 6 frames
+Start Enemy Attack Startup Delay
+Attack input
+ENEMY HIT. REMAINING HP : 50
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 10
+Next attack in 8 frames
+Start Enemy Attack Startup Delay
+Attack input
+ENEMY HIT. REMAINING HP : 40
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 6 frames
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER DIED ! GAME OVER
 Next attack in 10 frames
+Attack input
+ENEMY HIT. REMAINING HP : 30
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 6 frames
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 7 frames
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 8 frames
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 5 frames
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 8 frames
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 5 frames
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 7 frames
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 8 frames
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 9 frames
+Defend input
+Start Enemy Attack Startup Delay
+Defend over, starting cooldown
+Attack input
+ENEMY HIT. REMAINING HP : 20
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 9 frames
+Cooldown over, can defend again
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER DIED ! GAME OVER
+Next attack in 8 frames

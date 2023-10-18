@@ -58,18 +58,10 @@ void COMBAT::Update()
 		m_glyphSprite->isVisible = false;
 	}
 
-	if (m_isDefending)
-	{
-		ui->shieldBox->color = ui->unavailableColor;
-	}
-	else if (m_remainingDefendCooldown > 0)
-	{
-		ui->shieldBox->color = ui->cooldownColor;
-	}
-	else
-	{
-		ui->shieldBox->color = ui->readyColor;
-	}
+	ui->enemy_healthBar->value = m_enemy->GetCurrentPercentHP();
+	ui->player_healthBar->value = PLAYER_DATA::Instance->GetCurrentPercentHP();
+	
+
 
 }
 
@@ -77,10 +69,13 @@ void COMBAT::HandleAttack()
 {
 	if (m_remainingAttackCooldown > 0)
 	{
+		ui->swordBox->color = ui->cooldownColor;
 		m_remainingAttackCooldown--;
 
 		return;
 	}
+
+	ui->swordBox->color = ui->readyColor;
 
 	if (GetKeyState('A') & 0x8000/*Check if high-order bit is set (1 << 15)*/)
 	{
@@ -89,6 +84,8 @@ void COMBAT::HandleAttack()
 		m_remainingAttackCooldown = ATTACK_COOLDOWN;
 
 		m_swordSprite->PlayAnimation();
+
+		ui->swordBox->color = ui->unavailableColor;
 
 		bool enemyDead = m_enemy->Hit(PLAYER_DATA::Instance->GetPlayerAttack());
 
@@ -108,12 +105,21 @@ void COMBAT::HandleAttack()
 
 void  COMBAT::HandleDefend()
 {
+	if (m_isDefending)
+	{
+		ui->shieldBox->color = ui->unavailableColor;
+	}
+	else if (m_remainingDefendCooldown > 0)
+	{
+		ui->shieldBox->color = ui->cooldownColor;
+	}
 	if (m_remainingDefendCooldown > 0)
 	{
 		m_remainingDefendCooldown--;
 		if (m_isDefending && m_remainingDefendCooldown <= 0)
 		{
 			m_isDefending = false;
+			ui->shieldBox->color = ui->cooldownColor;
 			m_remainingDefendCooldown = DEFEND_COOLDOWN;
 			ofs << "Defend over, starting cooldown" << std::endl;
 			m_shieldSprite->spriteData = SPRITE_PARSER::ParseSprite("../shield_down.bmp");
@@ -122,6 +128,7 @@ void  COMBAT::HandleDefend()
 
 		if (m_remainingDefendCooldown <= 0)
 		{
+			ui->shieldBox->color = ui->readyColor;
 			ofs << "Cooldown over, can defend again" << std::endl;
 		}
 

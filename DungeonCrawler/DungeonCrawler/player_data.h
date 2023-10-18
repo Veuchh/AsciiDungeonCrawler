@@ -4,6 +4,7 @@ class PLAYER_DATA
 public:
 	int GetPlayerAttack();
 	int GetCurrentHP();
+	int GetCurrentPercentHP();
 	bool HitPlayer(int damage);
 	PLAYER_DATA(int maxHP, int playerAttack);
 	static PLAYER_DATA* Instance;

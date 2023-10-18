@@ -12,6 +12,12 @@ int PLAYER_DATA::GetCurrentHP()
 	return m_currentHP;
 }
 
+int PLAYER_DATA::GetCurrentPercentHP()
+{
+	return m_currentHP*100 / m_maxHP;
+}
+
+
 bool PLAYER_DATA::HitPlayer(int damage)
 {
 	m_currentHP = m_currentHP - damage;

@@ -17,8 +17,8 @@ void ENGINE_2D::start()
 
 	COMBAT* combat = new COMBAT();
 	scripts.push_back(combat);
-	UI_SCRIPT* userInterface = new UI_SCRIPT();
-	scripts.push_back(userInterface);
+	//UI_SCRIPT* userInterface = new UI_SCRIPT();
+	//scripts.push_back(userInterface);
 
 
 	scriptStart();

@@ -7,6 +7,7 @@ class ENEMY_DATA
 public:
 	int GetRandomCooldownDuration();
 	int GetCurrentHP();
+	int GetCurrentPercentHP();
 	int GetAttackStartupDelay();
 	bool Hit(int healthAmount);
 	bool m_isEnemyAttacking = false;

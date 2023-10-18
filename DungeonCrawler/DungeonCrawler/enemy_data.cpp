@@ -14,6 +14,11 @@ int ENEMY_DATA::GetCurrentHP()
 	return m_currentHP;
 }
 
+int ENEMY_DATA::GetCurrentPercentHP()
+{
+	return m_currentHP *100 / m_maxHP;
+}
+
 int ENEMY_DATA::GetAttackStartupDelay()
 {
 	return m_attackStartupDelay;
