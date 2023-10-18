@@ -160,6 +160,7 @@
     <ClCompile Include="spriteData.cpp" />
     <ClCompile Include="spriteParser.cpp" />
     <ClCompile Include="text2D.cpp" />
+    <ClCompile Include="UIScript.cpp" />
     <ClCompile Include="userInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +184,7 @@
     <ClInclude Include="spriteData.h" />
     <ClInclude Include="spriteParser.h" />
     <ClInclude Include="text2D.h" />
+    <ClInclude Include="UIScript.h" />
     <ClInclude Include="userInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -55,6 +55,20 @@ void COMBAT::Update()
 		ofs << "Next attack in " << m_remainingFramesBeforeEnemyAttack << " frames" << std::endl;
 		m_glyphSprite->isVisible = false;
 	}
+
+	if (m_isDefending)
+	{
+		ui->shieldBox->color = ui->unavailableColor;
+	}
+	else if (m_remainingDefendCooldown > 0)
+	{
+		ui->shieldBox->color = ui->cooldownColor;
+	}
+	else
+	{
+		ui->shieldBox->color = ui->readyColor;
+	}
+
 }
 
 void COMBAT::HandleAttack()
@@ -125,6 +139,8 @@ COMBAT::COMBAT()
 {
 	ofs.open("enemyLogs.txt");
 
+
+
 	m_glyphSprite = new SPRITE_2D(RENDERER_2D::Instance);
 	m_glyphSprite->spriteData = SPRITE_PARSER::ParseSprite("../glyph.bmp");
 	m_glyphSprite->pos_x = 0;
@@ -152,6 +168,9 @@ COMBAT::COMBAT()
 	m_shieldSprite->height = m_shieldSprite->spriteData->m_columns;
 	m_shieldSprite->width = m_shieldSprite->spriteData->m_rows;
 	SCENE::Instance->addChildNode(m_shieldSprite);
+
+	ui = new USER_INTERFACE(RENDERER_2D::Instance);
+	SCENE::Instance->addChildNode(ui);
 
 
 	ofs << "Initiating combat. Next attack in " << m_remainingFramesBeforeEnemyAttack << " frames" << std::endl;
