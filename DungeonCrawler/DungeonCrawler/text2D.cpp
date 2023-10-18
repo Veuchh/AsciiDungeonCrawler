@@ -5,12 +5,13 @@ TEXT_2D::TEXT_2D(RENDERER_2D* renderer) : ASSET_2D(renderer) {}
 void TEXT_2D::Draw()
 {
 	NODE_2D::Draw();
-
-	short line = pos_x/2;
+	int offset_x = GetOffsetX();
+	int offset_y = GetOffsetY();
+	short line = (pos_x+offset_x)/2;
 	int current = 0;
 	for (int i = 0; i < height / 2;i++)
 	{
-		current += WriteLine(line+i, pos_y, width, content, current);
+		current += WriteLine(line+i, pos_y+offset_y, width, content, current);
 		//current += width;
 		if (current > content.length())
 		{

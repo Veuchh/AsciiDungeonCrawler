@@ -95,7 +95,7 @@ void RENDERER_2D::writePixel(int coord_x, int coord_y, WORD color)
 }
 
 void RENDERER_2D::writeChar(int coord_x, int coord_y, CHAR value, WORD color) {
-    if (coord_x < GAME_HEIGHT && coord_y < GAME_WIDTH) {
+    if (coord_x < GAME_HEIGHT && coord_y < GAME_WIDTH && coord_x >= 0 && coord_y >= 0) {
         buffer[coord_x][coord_y].Char.UnicodeChar = value;
         buffer[coord_x][coord_y].Attributes = color;
     }

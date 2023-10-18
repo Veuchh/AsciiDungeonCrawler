@@ -144,6 +144,7 @@
     <ClCompile Include="DungeonCrawler.cpp" />
     <ClCompile Include="engine2D.cpp" />
     <ClCompile Include="gameScript.cpp" />
+    <ClCompile Include="healthBar.cpp" />
     <ClCompile Include="interfaceBox.cpp" />
     <ClCompile Include="menuScene.cpp" />
     <ClCompile Include="MovingBoxScript.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="consolebuffer.h" />
     <ClInclude Include="engine2D.h" />
     <ClInclude Include="gameScript.h" />
+    <ClInclude Include="healthBar.h" />
     <ClInclude Include="interfaceBox.h" />
     <ClInclude Include="menuScene.h" />
     <ClInclude Include="MovingBoxScript.h" />

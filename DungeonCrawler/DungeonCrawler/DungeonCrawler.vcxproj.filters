@@ -78,6 +78,9 @@
     <ClCompile Include="interfaceBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="healthBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="asset2D.h">
@@ -129,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="interfaceBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="healthBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
