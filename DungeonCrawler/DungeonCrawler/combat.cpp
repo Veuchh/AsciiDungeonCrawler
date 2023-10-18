@@ -16,6 +16,7 @@ void COMBAT::Update()
 			{
 				PLAYER_DATA::Instance->ResetPlayer();
 			}
+			m_enemy->ResetEnemy();
 			ui->messageBox->isVisible = false;
 			inCombat = true;
 		}
@@ -117,8 +118,8 @@ void COMBAT::HandleAttack()
 		if (enemyDead)
 		{
 			inCombat = false;
-			ui->messageText->isVisible = false;
-			ui->messageText->content = "COMMANDS:\nPRESS A TO ATTACK\nPRESS D TO DEFEND\nPRESS SPACE TO START THE GAME";
+			ui->messageText->isVisible = true;
+			ui->messageText->content = "PRESS SPACE TO CONTINUE";
 			ofs << "ENEMY DIED" << std::endl;
 		}
 		else
