@@ -118,7 +118,7 @@ void COMBAT::HandleAttack()
 		if (enemyDead)
 		{
 			inCombat = false;
-			ui->messageText->isVisible = true;
+			ui->messageBox->isVisible = true;
 			ui->messageText->content = "PRESS SPACE TO CONTINUE";
 			ofs << "ENEMY DIED" << std::endl;
 		}
