@@ -124,19 +124,18 @@ void  COMBAT::HandleDefend()
 COMBAT::COMBAT()
 {
 	ofs.open("enemyLogs.txt");
-	m_enemy = new ENEMY_DATA(5, 10, 5, 100, "../bat_idle.bmp");
-
-	m_remainingFramesBeforeEnemyAttack = m_enemy->GetRandomCooldownDuration();
-	ofs << "Initiating combat. Next attack in " << m_remainingFramesBeforeEnemyAttack << " frames" << std::endl;
 
 	m_glyphSprite = new SPRITE_2D(RENDERER_2D::Instance);
 	m_glyphSprite->spriteData = SPRITE_PARSER::ParseSprite("../glyph.bmp");
 	m_glyphSprite->pos_x = 0;
-	m_glyphSprite->pos_y = 0;
+	m_glyphSprite->pos_y = 30;
 	m_glyphSprite->height = m_glyphSprite->spriteData->m_columns;
 	m_glyphSprite->width = m_glyphSprite->spriteData->m_rows;
 	SCENE::Instance->addChildNode(m_glyphSprite);
-	m_glyphSprite->isVisible = false;
+	//m_glyphSprite->isVisible = false;
+
+	m_enemy = new ENEMY_DATA(5, 10, 5, 100, "../bat_idle.bmp");
+	m_remainingFramesBeforeEnemyAttack = m_enemy->GetRandomCooldownDuration();
 
 	m_swordSprite = new SPRITE_2D(RENDERER_2D::Instance);
 	m_swordSprite->spriteData = SPRITE_PARSER::ParseSprite("../sword_idle.bmp");
@@ -155,4 +154,5 @@ COMBAT::COMBAT()
 	SCENE::Instance->addChildNode(m_shieldSprite);
 
 
+	ofs << "Initiating combat. Next attack in " << m_remainingFramesBeforeEnemyAttack << " frames" << std::endl;
 }
