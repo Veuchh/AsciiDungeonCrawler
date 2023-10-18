@@ -86,7 +86,7 @@ void COMBAT::HandleAttack()
 		}
 		else
 		{
-			//TODO : enemy hit anim
+			m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_hit.bmp");
 			ofs << "ENEMY HIT. REMAINING HP : " << m_enemy->GetCurrentHP() << std::endl;
 		}
 	}

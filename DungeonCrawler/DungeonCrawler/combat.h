@@ -2,7 +2,7 @@
 #include "animated_sprite.h"
 #include "enemy_data.h"
 
-#define ATTACK_COOLDOWN 20;
+#define ATTACK_COOLDOWN 15;
 #define DEFEND_DURATION 5;
 #define DEFEND_COOLDOWN 3;
 
