@@ -1,6 +1,25 @@
 Initiating combat. Next attack in 10 frames
 Start Enemy Attack Startup Delay
 Defend input
+Attack input
+ENEMY HIT. REMAINING HP : 90
+Enemy Attacks
+Player defended the attack !
+Next attack in 10 frames
+Defend over, starting cooldown
+Cooldown over, can defend again
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 90
+Next attack in 9 frames
+Start Enemy Attack Startup Delay
+Defend input
+Enemy Attacks
+Player defended the attack !
+Next attack in 9 frames
+Cooldown over, can defend again
+Start Enemy Attack Startup Delay
+Defend input
 Enemy Attacks
 Player defended the attack !
 Next attack in 10 frames
@@ -10,20 +29,38 @@ Defend input
 Start Enemy Attack Startup Delay
 Defend over, starting cooldown
 Enemy Attacks
-PLAYER HIT ! REMAINING HP : 90
-Next attack in 9 frames
-Cooldown over, can defend again
-Defend input
-Defend over, starting cooldown
-Start Enemy Attack Startup Delay
-Cooldown over, can defend again
-Defend input
-Enemy Attacks
-Player defended the attack !
-Next attack in 9 frames
-Defend over, starting cooldown
-Cooldown over, can defend again
-Start Enemy Attack Startup Delay
-Enemy Attacks
 PLAYER HIT ! REMAINING HP : 80
+Next attack in 9 frames
+Attack input
+ENEMY HIT. REMAINING HP : 80
+Cooldown over, can defend again
+Defend input
+Start Enemy Attack Startup Delay
+Defend over, starting cooldown
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 70
+Next attack in 5 frames
+Cooldown over, can defend again
+Start Enemy Attack Startup Delay
+Attack input
+ENEMY HIT. REMAINING HP : 70
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 60
+Next attack in 5 frames
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 50
+Next attack in 9 frames
+Defend input
+Start Enemy Attack Startup Delay
+Defend over, starting cooldown
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 40
+Next attack in 7 frames
+Attack input
+ENEMY HIT. REMAINING HP : 60
+Cooldown over, can defend again
+Start Enemy Attack Startup Delay
+Enemy Attacks
+PLAYER HIT ! REMAINING HP : 30
 Next attack in 10 frames
