@@ -6,12 +6,24 @@
 
 std::ofstream ofs;
 
+int framesBeforeEnemyHitAnim;
+
 void COMBAT::Update()
 {
 	m_swordSprite->Update();
 
 	m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_idle.bmp");
 	m_remainingFramesBeforeEnemyAttack--;
+
+	if (framesBeforeEnemyHitAnim > 0)
+	{
+		framesBeforeEnemyHitAnim--;
+
+		if (framesBeforeEnemyHitAnim== 0)
+		{
+			m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_hit.bmp");
+		}
+	}
 
 	HandleAttack();
 
@@ -97,7 +109,7 @@ void COMBAT::HandleAttack()
 		}
 		else
 		{
-			m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_hit.bmp");
+			framesBeforeEnemyHitAnim = 5;
 			ofs << "ENEMY HIT. REMAINING HP : " << m_enemy->GetCurrentHP() << std::endl;
 		}
 	}
