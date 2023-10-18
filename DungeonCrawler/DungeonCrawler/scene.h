@@ -5,6 +5,7 @@
 
 class SCENE : public NODE_2D {
 public:
+	static SCENE* Instance;
 	WORD backgroundColor;
 	SCENE(RENDERER_2D* renderer);
 	virtual void Draw();
