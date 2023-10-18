@@ -32,14 +32,17 @@ bool ENEMY_DATA::Hit(int healthAmount)
 	return m_currentHP <= 0;
 }
 
-ENEMY_DATA::ENEMY_DATA(int minCooldown, int maxCooldown, int attackStartupDelay, int maxHP, std::string enemySprite) :
+ENEMY_DATA::ENEMY_DATA(int minCooldown, int maxCooldown, int attackStartupDelay, int maxHP, std::string enemySprite, std::string enemyAttackSprite, std::string enemyHitSprite) :
 	m_minCooldown(minCooldown), m_maxCooldown(maxCooldown), m_attackStartupDelay(attackStartupDelay), m_maxHP(maxHP)
 {
 	m_currentHP = maxHP;
+	m_enemySpriteIdle = SPRITE_PARSER::ParseSprite(enemySprite);
+	m_enemySpriteAttack = SPRITE_PARSER::ParseSprite(enemyAttackSprite);
+	m_enemySpriteHit = SPRITE_PARSER::ParseSprite(enemyHitSprite);
 
 	//TODO will need to use the system tha loads all sprites
 	m_enemySprite = new SPRITE_2D(RENDERER_2D::Instance);
-	m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_idle.bmp");
+	m_enemySprite->spriteData = m_enemySpriteIdle;
 	m_enemySprite->pos_x = 13;
 	m_enemySprite->pos_y = 30;
 	m_enemySprite->height = m_enemySprite->spriteData->m_columns;
