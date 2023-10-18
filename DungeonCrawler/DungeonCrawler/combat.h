@@ -19,6 +19,7 @@ private:
 	ANIMATED_SPRITE* m_swordSprite;
 	SPRITE_2D* m_shieldSprite;
 	SPRITE_2D* m_glyphSprite;
+	SPRITE_2D* m_roomSprite;
 public:
 	virtual void Update();
 	COMBAT();

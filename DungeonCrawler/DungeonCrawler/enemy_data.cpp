@@ -35,7 +35,7 @@ ENEMY_DATA::ENEMY_DATA(int minCooldown, int maxCooldown, int attackStartupDelay,
 	//TODO will need to use the system tha loads all sprites
 	m_enemySprite = new SPRITE_2D(RENDERER_2D::Instance);
 	m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_idle.bmp");
-	m_enemySprite->pos_x = 0;
+	m_enemySprite->pos_x = 13;
 	m_enemySprite->pos_y = 30;
 	m_enemySprite->height = m_enemySprite->spriteData->m_columns;
 	m_enemySprite->width = m_enemySprite->spriteData->m_rows;

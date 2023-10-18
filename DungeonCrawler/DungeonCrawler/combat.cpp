@@ -127,9 +127,17 @@ COMBAT::COMBAT()
 {
 	ofs.open("enemyLogs.txt");
 
+	m_roomSprite = new SPRITE_2D(RENDERER_2D::Instance);
+	m_roomSprite->spriteData = SPRITE_PARSER::ParseSprite("../background.bmp");
+	m_roomSprite->pos_x = 0;
+	m_roomSprite->pos_y = 0;
+	m_roomSprite->height = m_roomSprite->spriteData->m_columns;
+	m_roomSprite->width = m_roomSprite->spriteData->m_rows;
+	SCENE::Instance->addChildNode(m_roomSprite);
+
 	m_glyphSprite = new SPRITE_2D(RENDERER_2D::Instance);
 	m_glyphSprite->spriteData = SPRITE_PARSER::ParseSprite("../glyph.bmp");
-	m_glyphSprite->pos_x = 0;
+	m_glyphSprite->pos_x = 13;
 	m_glyphSprite->pos_y = 30;
 	m_glyphSprite->height = m_glyphSprite->spriteData->m_columns;
 	m_glyphSprite->width = m_glyphSprite->spriteData->m_rows;
