@@ -14,7 +14,7 @@ void COMBAT::Update()
 		{
 			if (isPlayerDead)
 			{
-
+				PLAYER_DATA::Instance->ResetPlayer();
 			}
 			ui->messageBox->isVisible = false;
 			inCombat = true;
