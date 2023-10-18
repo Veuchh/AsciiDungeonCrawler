@@ -8,6 +8,19 @@ std::ofstream ofs;
 
 void COMBAT::Update()
 {
+	if (!inCombat)
+	{
+		if ((GetKeyState(VK_SPACE) & 0x8000/*Check if high-order bit is set (1 << 15)*/))
+		{
+			if (isPlayerDead)
+			{
+
+			}
+			ui->messageBox->isVisible = false;
+			inCombat = true;
+		}
+		return;
+	}
 	m_swordSprite->Update();
 
 	m_enemy->m_enemySprite->spriteData = SPRITE_PARSER::ParseSprite("../bat_idle.bmp");
@@ -34,12 +47,14 @@ void COMBAT::Update()
 
 		if (!m_isDefending)
 		{
-			bool isPlayerDead = PLAYER_DATA::Instance->HitPlayer(10);
+			isPlayerDead = PLAYER_DATA::Instance->HitPlayer(10);
 
 			if (isPlayerDead)
 			{
 				ofs << "PLAYER DIED ! GAME OVER" << std::endl;
-				//TODO Kill player game over
+				inCombat = false;
+				ui->messageBox->isVisible = true;
+				ui->messageText->content = "YOU DIED\n PRESS SPACE TO RESTART";
 			}
 
 			else
@@ -91,8 +106,9 @@ void COMBAT::HandleAttack()
 
 		if (enemyDead)
 		{
-			//TODO enemy death anim
-			//TODO : end battle
+			inCombat = false;
+			ui->messageText->isVisible = false;
+			ui->messageText->content = "COMMANDS:\nPRESS A TO ATTACK\nPRESS D TO DEFEND\nPRESS SPACE TO START THE GAME";
 			ofs << "ENEMY DIED" << std::endl;
 		}
 		else

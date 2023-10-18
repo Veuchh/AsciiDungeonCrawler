@@ -14,6 +14,8 @@ private:
 	int m_remainingFramesBeforeEnemyAttack;
 	int m_remainingAttackCooldown = 0;
 	int m_remainingDefendCooldown = 0;
+	bool inCombat = false;
+	bool isPlayerDead = false;
 	bool m_isDefending = false;
 	void HandleAttack(); 
 	void HandleDefend();

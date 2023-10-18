@@ -17,10 +17,16 @@ USER_INTERFACE::USER_INTERFACE(RENDERER_2D* renderer) : NODE_2D(renderer){
 	enemy_healthBar->outlineColor = 0x00;
 	enemy_healthBar->color = 0x00;
 
-	bottomBox = new INTERFACE_BOX(RENDERER_2D::Instance);
-	bottomBox->outlineColor = 0x03;
-	bottomBox->width = PIXEL_WIDTH - (PIXEL_WIDTH / 10);
-	bottomBox->height = 20;
+	messageBox = new INTERFACE_BOX(RENDERER_2D::Instance);
+	messageBox->outlineColor = 0x03;
+	messageBox->width = 36;
+	messageBox->height = 20;
+	messageText = new TEXT_2D(RENDERER_2D::Instance);
+	messageText->content = "COMMANDS:\nPRESS A TO ATTACK\nPRESS D TO DEFEND\nPRESS SPACE TO START THE GAME";
+	messageText->color = 0xF;
+	messageText->width = 25;
+	messageText->height = 10;
+	messageBox->addChildNode(messageText);
 
 	shieldBox = new INTERFACE_BOX(RENDERER_2D::Instance);
 	shieldBox->anchor = ANCHOR_CENTERED;
@@ -38,6 +44,7 @@ USER_INTERFACE::USER_INTERFACE(RENDERER_2D* renderer) : NODE_2D(renderer){
 	shieldSprite->anchor = ANCHOR_CENTERED;
 	shieldSprite->pos_x = PIXEL_HEIGHT - 20;
 	shieldSprite->pos_y = PIXEL_WIDTH * 2 / 10;
+	shieldBox->addChildNode(shieldSprite);
 
 
 	swordBox = new INTERFACE_BOX(RENDERER_2D::Instance);
@@ -56,12 +63,14 @@ USER_INTERFACE::USER_INTERFACE(RENDERER_2D* renderer) : NODE_2D(renderer){
 	swordSprite->anchor = ANCHOR_CENTERED;
 	swordSprite->pos_x = PIXEL_HEIGHT - 20;
 	swordSprite->pos_y = PIXEL_WIDTH - PIXEL_WIDTH * 2 / 10;
+	swordBox->addChildNode(swordSprite);
 
 	enemy_healthBar->SetPosition(SCREEN_TOP);
 	enemy_healthBar->pos_x = enemy_healthBar->pos_x + 4;
 	player_healthBar->SetPosition(SCREEN_BOTTOM);
-	bottomBox->SetPosition(SCREEN_BOTTOM);
-	bottomBox->pos_x = bottomBox->pos_x - 10;
+	messageBox->SetPosition(SCREEN_CENTER);
+	messageText->SetPosition(SCREEN_CENTER);
+	//messageBox->pos_x = bottomBox->pos_x - 10;
 }
 
 void USER_INTERFACE::Draw()
@@ -74,8 +83,6 @@ void USER_INTERFACE::Draw()
 	player_healthBar->Draw();
 	shieldBox->Draw();
 	swordBox->Draw();
-	shieldSprite->Draw();
-	swordSprite->Draw();
-	//bottomBox->Draw();
+	messageBox->Draw();
 	NODE_2D::Draw();
 }

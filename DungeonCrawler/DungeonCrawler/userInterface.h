@@ -4,6 +4,7 @@
 #include "interfaceBox.h"
 #include "sprite2D.h"
 #include "spriteParser.h"
+#include "text2D.h"
 
 
 class USER_INTERFACE : public NODE_2D
@@ -12,7 +13,8 @@ public:
 	USER_INTERFACE(RENDERER_2D* renderer);
 	HEALTH_BAR* player_healthBar;
 	HEALTH_BAR* enemy_healthBar;
-	INTERFACE_BOX* bottomBox;
+	INTERFACE_BOX* messageBox;
+	TEXT_2D* messageText;
 	INTERFACE_BOX* shieldBox;
 	INTERFACE_BOX* swordBox;
 	SPRITE_2D* shieldSprite;
